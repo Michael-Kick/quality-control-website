@@ -1,0 +1,41 @@
+.portrait {
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #4f6070;
+  background: linear-gradient(160deg, #d9e2ea, #b9c7d3);
+  border-radius: var(--radius-lg);
+  flex: none;
+}
+
+.dark {
+  color: #9fb3c6;
+  background: linear-gradient(160deg, #24405b, #183049);
+}
+
+.lg {
+  width: 220px;
+  aspect-ratio: 4 / 5;
+}
+
+.md {
+  width: 160px;
+  aspect-ratio: 4 / 5;
+}
+
+.sm {
+  width: 72px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 11px;
+  padding: 4px;
+}
+
+@media (max-width: 760px) {
+  .lg {
+    width: 160px;
+  }
+}

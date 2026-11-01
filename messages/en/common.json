@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "defaultTitle": "NAME.QM · Audits, training and consulting for medical devices and pharma",
+    "description": "Audits, training and consulting to ISO 9001, ISO 13485, ISO 19011 and GMP for small and mid-sized medical device and pharma companies."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Book a consultation",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "homeLink": "Go to home page"
+  },
+  "langSwitch": {
+    "label": "Switch language to German"
+  },
+  "cta": {
+    "introCall": "Free intro call",
+    "bookIntroCall": "Book an intro call",
+    "bookIntroCallArrow": "Book an intro call →",
+    "adviceNoObligation": "Get free, no-obligation advice",
+    "viewServices": "View services"
+  },
+  "process": {
+    "eyebrow": "Getting started",
+    "title": "Your path to working together",
+    "intro": "It starts with a free, no-obligation intro call.",
+    "steps": {
+      "contact": {
+        "title": "Get in touch",
+        "text": "Via the form, email or phone. I get back to you personally within one working day and we set a date."
+      },
+      "call": {
+        "title": "Free intro call",
+        "text": "About 30 minutes, no obligation. Where do you stand today, and what is your goal?"
+      },
+      "proposal": {
+        "title": "Analysis and proposal",
+        "text": "I assess your situation and requirements and send a fixed proposal with audit plan or training agenda."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "text": "Audit or training on site or remote, with a report and recommended actions."
+      }
+    }
+  },
+  "person": {
+    "role": "Your contact",
+    "roleLong": "Your contact for audits and training",
+    "photo": "Portrait photo",
+    "photoShort": "Photo"
+  },
+  "footer": {
+    "tagline": "Audits, training and consulting for medical devices and pharma.",
+    "contact": "Contact",
+    "legal": "Legal",
+    "imprint": "Legal notice",
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you requested does not exist or has been moved.",
+    "back": "Go to home page"
+  }
+}

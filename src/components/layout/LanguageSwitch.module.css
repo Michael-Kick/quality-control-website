@@ -1,0 +1,56 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  background: none;
+  border: 0;
+  color: var(--on-navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.switch[aria-busy="true"] {
+  cursor: progress;
+}
+
+.label {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.label[data-active="true"] {
+  opacity: 1;
+}
+
+.track {
+  position: relative;
+  flex: none;
+  width: 40px;
+  height: 22px;
+  border-radius: 22px;
+  background: var(--navy-border);
+  transition: background-color 0.2s;
+}
+
+.switch[aria-checked="true"] .track {
+  background: var(--sky);
+}
+
+.knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.switch[aria-checked="true"] .knob {
+  transform: translateX(18px);
+}

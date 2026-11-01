@@ -1,0 +1,850 @@
+<title>QM-Website Seitenentwürfe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  /* Layout: review column with page tabs above one framed browser preview; the preview holds all four pages of direction C. */
+  :root {
+    --bg: #eef2f5;
+    --surface: #ffffff;
+    --fg: #15212c;
+    --muted: #566573;
+    --line: #d5dde4;
+    --accent: #1c5d84;
+    --accent-soft: #e2edf4;
+    --font-ui: "Public Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e141a; --surface: #161f28; --fg: #e4eaf0; --muted: #93a2b0;
+      --line: #283541; --accent: #7fbde3; --accent-soft: #1b2c3a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e141a; --surface: #161f28; --fg: #e4eaf0; --muted: #93a2b0;
+    --line: #283541; --accent: #7fbde3; --accent-soft: #1b2c3a; color-scheme: dark;
+  }
+
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); font-size: 15px; line-height: 1.55; }
+  .page {
+    max-width: 1120px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 40px 72px;
+    display: grid; gap: 28px;
+  }
+  .intro { display: grid; gap: 12px; max-width: 70ch; }
+  .kicker { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .intro h1 { margin: 0; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; font-weight: 700; text-wrap: balance; }
+  .intro p { margin: 0; color: var(--muted); }
+
+  .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px; }
+  .tab { font: inherit; font-size: 14px; font-weight: 600; color: var(--muted); background: none; border: 0; border-radius: 7px; padding: 8px 14px; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
+  .tab:hover { color: var(--fg); }
+  .comment-btn { font: inherit; font-size: 13.5px; font-weight: 600; color: var(--accent); background: var(--surface); border: 1px solid var(--line); border-radius: 7px; padding: 8px 13px; cursor: pointer; }
+  .comment-btn:hover { border-color: var(--accent); }
+  .tab:focus-visible, .comment-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .frame { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); box-shadow: 0 1px 2px rgba(15, 30, 45, .06); scroll-margin-top: 16px; }
+  .chrome { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--line); }
+  .url { font-family: var(--font-mono); font-size: 12px; color: var(--muted); background: var(--bg); border-radius: 6px; padding: 3px 10px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .open { display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 22px; max-width: 76ch; }
+  .open h2 { margin: 0; font-size: 17px; }
+  .open ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 4px; }
+  .open strong { color: var(--fg); font-weight: 600; }
+
+  /* ---------- Mockup: direction C (fixed palette, it shows the website itself) ---------- */
+  .mk { --navy: #0d1b2a; --navy-2: #13283d; --navy-line: #1f3a55; --sky: #4fb3ff; --sky-ink: #1a6fb3;
+        --ink: #13202b; --ink-2: #4a5d6f; --mist: #f0f4f8; --rule: #dde5ec; --on-navy: #e8eef4; --on-navy-2: #a9bacb;
+        background: #ffffff; color: var(--ink); font-family: "IBM Plex Sans", "Segoe UI", sans-serif; font-size: 15px; line-height: 1.55; text-align: left; }
+  .mk * { box-sizing: border-box; }
+  .mk button { font: inherit; cursor: pointer; }
+  .mk .in { padding-inline: clamp(16px, 4vw, 44px); }
+  .mk h1, .mk h2, .mk h3 { text-wrap: balance; }
+
+  .mk .top { background: var(--navy); color: var(--on-navy); }
+  .mk .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; font-size: 14px; }
+  .mk .logo { font-weight: 700; font-size: 16px; letter-spacing: .02em; background: none; border: 0; color: inherit; padding: 0; }
+  .mk .logo span { color: var(--sky); }
+  .mk .navright { display: flex; align-items: center; gap: 20px; }
+  .mk .navlinks { display: flex; gap: 18px; }
+  .mk .navlink { background: none; border: 0; padding: 4px 0; color: var(--on-navy-2); border-bottom: 2px solid transparent; }
+  .mk .navlink:hover { color: #ffffff; }
+  .mk .navlink[aria-current="page"] { color: #ffffff; border-bottom-color: var(--sky); }
+  .mk .navcta { background: var(--sky); color: var(--navy); border: 0; border-radius: 6px; padding: 7px 13px; font-weight: 600; font-size: 13px; }
+
+  .lang-switch { display: inline-flex; align-items: center; gap: 7px; font: inherit; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; background: none; border: 0; padding: 4px 0; cursor: pointer; color: inherit; }
+  .lang-switch .track { width: 38px; height: 20px; border-radius: 20px; position: relative; flex: none; background: #2c4258; transition: background .2s; }
+  .lang-switch[aria-checked="true"] .track { background: #4fb3ff; }
+  .lang-switch .knob { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0, 0, 0, .3); transition: transform .2s; }
+  .lang-switch[aria-checked="true"] .knob { transform: translateX(18px); }
+  .lang-switch .lbl { opacity: .5; }
+  .lang-switch[aria-checked="false"] .lbl-de, .lang-switch[aria-checked="true"] .lbl-en { opacity: 1; }
+  .mk button:focus-visible, .mk input:focus-visible, .mk select:focus-visible, .mk textarea:focus-visible, .lang-switch:focus-visible { outline: 2px solid var(--sky); outline-offset: 2px; }
+
+  .mk .btn { display: inline-block; font-size: 14px; font-weight: 600; padding: 11px 18px; border-radius: 6px; border: 1px solid transparent; }
+  .mk .btn.p { background: var(--sky); color: var(--navy); }
+  .mk .btn.s { border-color: #2c4258; color: var(--on-navy); background: transparent; }
+  .mk .btn.d { background: var(--navy); color: #ffffff; }
+  .mk .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .mk .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--sky-ink); }
+  .mk .top .eyebrow, .mk .band .eyebrow { color: var(--sky); }
+  .mk .textlink { background: none; border: 0; padding: 0; color: var(--sky-ink); font-weight: 600; font-size: 14px; }
+  .mk .textlink:hover { text-decoration: underline; }
+
+  /* hero */
+  .mk .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: end; padding-block: 44px 40px; }
+  .mk .hero > div, .mk .pagehead > div { min-width: 0; }
+  .mk .hero h1, .mk .pagehead h1 { font-size: clamp(27px, 3.8vw, 38px); line-height: 1.13; margin: 10px 0 14px; font-weight: 700; color: #ffffff; }
+  .mk .lead { color: var(--on-navy-2); font-size: 16.5px; line-height: 1.6; margin: 0; max-width: 58ch; }
+  .mk .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mk .stat { background: var(--navy-2); border: 1px solid var(--navy-line); border-radius: 8px; padding: 13px 15px; }
+  .mk .stat b { display: block; font-size: 23px; color: #ffffff; font-variant-numeric: tabular-nums; }
+  .mk .stat span { font-size: 12.5px; color: #8ea3b8; }
+  .mk .badgebar { background: var(--mist); display: flex; flex-wrap: wrap; gap: 8px 26px; padding-block: 12px; font-size: 12.5px; font-weight: 700; color: #41566b; letter-spacing: .06em; }
+
+  /* sections */
+  .mk .sec { padding-block: 52px; display: grid; gap: 26px; }
+  .mk .sec.alt { background: var(--mist); }
+  .mk .sechead { display: grid; gap: 8px; max-width: 64ch; }
+  .mk .sechead h2 { margin: 0; font-size: clamp(22px, 2.8vw, 28px); line-height: 1.2; }
+  .mk .sechead p { margin: 0; color: var(--ink-2); }
+  .mk .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .mk .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .mk .card.feature { border-color: var(--sky); box-shadow: 0 0 0 1px var(--sky); }
+  .mk .card { border: 1px solid var(--rule); border-radius: 8px; padding: 22px; background: #ffffff; display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .mk .card h3 { margin: 0; font-size: 18px; }
+  .mk .card p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+  .mk .ico { width: 34px; height: 34px; border-radius: 7px; display: grid; place-items: center; font-size: 16px; font-weight: 700; background: #e6f2fc; color: var(--sky-ink); }
+  .mk .tag { justify-self: start; font-size: 11.5px; font-weight: 600; color: var(--sky-ink); background: #e6f2fc; border-radius: 4px; padding: 3px 8px; }
+
+  .mk .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding-block: 0; }
+  .mk .steps li { display: grid; gap: 6px; align-content: start; border-top: 3px solid var(--sky); padding-top: 14px; min-width: 0; }
+  .mk .steps .n { font-size: 12px; font-weight: 700; color: var(--sky-ink); letter-spacing: .08em; }
+  .mk .steps b { font-size: 16px; }
+  .mk .steps span { font-size: 14px; color: var(--ink-2); }
+
+  .mk .split { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: center; }
+  .mk .photo { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 10px; background: linear-gradient(160deg, #d9e2ea, #b9c7d3); color: #4f6070; display: grid; place-items: center; font-size: 13px; text-align: center; padding: 10px; }
+  .mk .split .txt { display: grid; gap: 12px; }
+  .mk .split h2 { margin: 0; font-size: 26px; }
+  .mk .split p { margin: 0; color: var(--ink-2); max-width: 60ch; }
+
+  .mk .band { background: var(--navy); color: var(--on-navy); }
+  .mk .band .in { padding-block: 44px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+  .mk .band h2 { margin: 0 0 6px; font-size: 24px; color: #ffffff; }
+  .mk .band p { margin: 0; color: var(--on-navy-2); }
+
+  /* page head (inner pages) */
+  .mk .pagehead { padding-block: 40px 44px; display: grid; gap: 4px; }
+  .mk .pagehead .lead { margin-top: 2px; }
+  .mk .subnav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .mk .chip { font-size: 13px; font-weight: 600; color: var(--on-navy); border: 1px solid #2c4258; border-radius: 20px; padding: 5px 12px; }
+
+  /* spec cards (Leistungen) */
+  .mk .spec { margin: 4px 0 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 7px 16px; font-size: 14px; border-top: 1px solid var(--rule); padding-top: 12px; }
+  .mk .spec dt { color: var(--ink-2); }
+  .mk .spec dd { margin: 0; font-weight: 500; }
+  .mk .note { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; border: 1px dashed #b8c7d5; border-radius: 8px; padding: 18px 22px; background: #ffffff; }
+  .mk .note p { margin: 0; color: var(--ink-2); }
+
+  /* Über mich */
+  .mk .abouthead { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; align-items: center; padding-block: 40px 44px; }
+  .mk .abouthead .photo { background: linear-gradient(160deg, #24405b, #183049); color: #9fb3c6; }
+  .mk .abouthead h1 { margin: 8px 0 6px; font-size: clamp(27px, 3.8vw, 36px); color: #ffffff; }
+  .mk .role { color: var(--sky); font-weight: 600; font-size: 14.5px; }
+  .mk .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .mk .fact { font-size: 13px; color: var(--on-navy); background: var(--navy-2); border: 1px solid var(--navy-line); border-radius: 6px; padding: 5px 10px; }
+
+  .mk .timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+  .mk .timeline li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 22px; padding-bottom: 22px; position: relative; }
+  .mk .timeline li::before { content: ""; position: absolute; left: 151px; top: 6px; bottom: -6px; width: 2px; background: var(--rule); }
+  .mk .timeline li:last-child::before { display: none; }
+  .mk .timeline .yr { font-size: 13.5px; font-weight: 600; color: var(--sky-ink); font-variant-numeric: tabular-nums; padding-top: 1px; }
+  .mk .timeline .what { display: grid; gap: 2px; padding-left: 22px; position: relative; }
+  .mk .timeline .what::before { content: ""; position: absolute; left: -7px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #ffffff; border: 2px solid var(--sky); }
+  .mk .timeline b { font-size: 16px; }
+  .mk .timeline span { color: var(--ink-2); font-size: 14px; }
+
+  .mk .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .mk .cert { background: #ffffff; border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
+  .mk .cert .std { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; color: var(--sky-ink); text-transform: uppercase; }
+  .mk .cert b { font-size: 15.5px; }
+  .mk .cert span { font-size: 13px; color: var(--ink-2); }
+  .mk .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+  /* Kontakt */
+  .mk .contact { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+  .mk form { display: grid; gap: 16px; border: 1px solid var(--rule); border-radius: 10px; padding: 26px; background: #ffffff; }
+  .mk .row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .mk .field { display: grid; gap: 6px; min-width: 0; }
+  .mk .field label, .mk fieldset legend { font-size: 13px; font-weight: 600; }
+  .mk input[type="text"], .mk input[type="email"], .mk input[type="tel"], .mk select, .mk textarea {
+    font: inherit; font-size: 15px; color: var(--ink); background: #ffffff; border: 1px solid #c4d1dd; border-radius: 6px; padding: 10px 12px; width: 100%;
+  }
+  .mk textarea { min-height: 120px; resize: vertical; }
+  .mk input::placeholder, .mk textarea::placeholder { color: #8796a5; }
+  .mk fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .mk .seg { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mk .seg label { position: relative; }
+  .mk .seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .mk .seg span { display: inline-block; font-size: 14px; font-weight: 500; border: 1px solid #c4d1dd; border-radius: 6px; padding: 8px 14px; }
+  .mk .seg input:checked + span { background: var(--navy); border-color: var(--navy); color: #ffffff; }
+  .mk .seg input:focus-visible + span { outline: 2px solid var(--sky); outline-offset: 2px; }
+  .mk .consent { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; font-size: 13px; color: var(--ink-2); align-items: start; }
+  .mk .consent input { margin-top: 3px; width: 16px; height: 16px; }
+  .mk .req { color: #b4372f; }
+  .mk .hint { font-size: 12.5px; color: var(--ink-2); margin: 0; }
+  .mk .submit { justify-self: start; border: 0; }
+  .mk .success { border: 1px solid #b7dcc4; background: #eef8f1; color: #1d5a35; border-radius: 10px; padding: 24px 26px; display: grid; gap: 8px; }
+  .mk .success b { font-size: 17px; }
+  .mk .success p { margin: 0; }
+  .mk .success .demo { font-size: 12.5px; color: #4b6b57; font-style: italic; }
+
+  .mk .aside { display: grid; gap: 18px; }
+  .mk .aside .box { border: 1px solid var(--rule); border-radius: 10px; padding: 20px 22px; display: grid; gap: 12px; background: #ffffff; }
+  .mk .aside h3 { margin: 0; font-size: 16px; }
+  .mk .kv { display: grid; gap: 2px; font-size: 14px; }
+  .mk .kv span { color: var(--ink-2); font-size: 12.5px; }
+  .mk .kv b { font-weight: 600; user-select: all; }
+  .mk .next { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14px; color: var(--ink-2); }
+  .mk .promise { background: var(--navy); color: var(--on-navy); }
+  .mk .promise b { color: #ffffff; font-size: 16px; }
+  .mk .promise p { margin: 0; color: var(--on-navy-2); font-size: 14px; }
+
+  /* first-call touchpoints: contact person, "not listed" block */
+  .mk .rolel { color: var(--sky-ink); font-weight: 600; font-size: 14px; margin-top: -6px; }
+  .mk .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 4px; }
+  .mk .notfound { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; align-items: center; border: 1px solid var(--rule); border-radius: 10px; padding: 28px; }
+  .mk .nf-text { display: grid; gap: 12px; justify-items: start; }
+  .mk .nf-text h2 { margin: 0; font-size: 24px; }
+  .mk .nf-text p { margin: 0; color: var(--ink-2); max-width: 56ch; }
+  .mk .person { display: flex; gap: 16px; align-items: center; background: var(--mist); border-radius: 10px; padding: 16px; }
+  .mk .person > div:last-child { display: grid; gap: 2px; justify-items: start; min-width: 0; }
+  .mk .person span { color: var(--ink-2); font-size: 13.5px; }
+  .mk .photo.sm { width: 72px; aspect-ratio: 1; border-radius: 50%; font-size: 11px; padding: 4px; flex: none; }
+  .mk .person.dark { background: var(--navy-2); padding: 12px; }
+  .mk .person.dark span { color: var(--on-navy-2); }
+  .mk .person.dark .photo { background: linear-gradient(160deg, #24405b, #183049); color: #9fb3c6; }
+
+  /* footer */
+  .mk .foot { background: #0a1622; color: var(--on-navy-2); font-size: 13.5px; }
+  .mk .foot .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding-block: 34px 22px; }
+  .mk .foot .cols > div { display: grid; gap: 6px; align-content: start; }
+  .mk .foot b { color: #ffffff; font-size: 14px; }
+  .mk .foot .legal { border-top: 1px solid #1c2c3c; padding-block: 14px; font-size: 12.5px; color: #7d90a3; }
+
+  @media (max-width: 760px) {
+    .mk .navlinks, .mk .navcta { display: none; }
+    .mk .hero, .mk .abouthead, .mk .split, .mk .contact, .mk .grid2, .mk .principles, .mk .row2, .mk .notfound, .mk .grid3 { grid-template-columns: 1fr; }
+    .mk .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mk .split .photo, .mk .abouthead .photo { width: 160px; }
+    .mk .timeline li { grid-template-columns: 1fr; gap: 4px; padding-left: 22px; }
+    .mk .timeline li::before { left: 4px; top: 8px; }
+    .mk .timeline .what::before { left: -25px; top: -18px; }
+  }
+  @media (max-width: 460px) { .mk .steps { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .lang-switch .knob, .lang-switch .track { transition: none; } }
+</style>
+
+<main class="page">
+  <header class="intro">
+    <div class="kicker">Variante C · Seitenentwürfe</div>
+    <h1>Alle Seiten im Corporate-Stil</h1>
+    <p>Klick dich über die Reiter oder direkt über das Menü im Entwurf durch die vier Seiten. Der DE/EN-Schalter oben rechts im Entwurf schaltet alle Texte um, die Adresse wechselt dabei zwischen /de und /en. Alle Namen, Zahlen, Stationen, Zertifikate und Kontaktdaten sind Platzhalter.</p>
+    <p>Die Kontaktaufnahme ist an qmh-group.com angelehnt: „Termin vereinbaren“ im Menü, ein kostenloses Erstgespräch von ca. 30 Minuten als roter Faden, der Ablauf in vier Schritten und eine Karte mit der Ansprechperson.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="tabs" role="tablist" aria-label="Seiten">
+      <button class="tab" role="tab" type="button" data-tab="start" aria-selected="true">Startseite</button>
+      <button class="tab" role="tab" type="button" data-tab="leistungen" aria-selected="false">Leistungen</button>
+      <button class="tab" role="tab" type="button" data-tab="ueber-mich" aria-selected="false">Über mich</button>
+      <button class="tab" role="tab" type="button" data-tab="kontakt" aria-selected="false">Kontakt</button>
+    </div>
+    <button class="comment-btn" type="button" hidden>Diese Seite kommentieren</button>
+  </div>
+
+  <div class="frame" id="frame">
+    <div class="chrome"><span class="url" id="url">www.name-qm.de/de</span></div>
+
+    <div class="mk" id="mk">
+      <!-- Shared header -->
+      <div class="top">
+        <div class="in nav">
+          <button class="logo" type="button" data-goto="start">NAME<span>.QM</span></button>
+          <div class="navright">
+            <nav class="navlinks" aria-label="Hauptmenü">
+              <button class="navlink" type="button" data-goto="leistungen" data-en="Services">Leistungen</button>
+              <button class="navlink" type="button" data-goto="ueber-mich" data-en="About">Über mich</button>
+              <button class="navlink" type="button" data-goto="kontakt" data-en="Contact">Kontakt</button>
+            </nav>
+            <button class="lang-switch" type="button" role="switch" aria-checked="false" aria-label="Sprache auf Englisch umschalten"><span class="lbl lbl-de">DE</span><span class="track"><span class="knob"></span></span><span class="lbl lbl-en">EN</span></button>
+            <button class="navcta" type="button" data-goto="kontakt" data-en="Book a consultation">Termin vereinbaren</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Startseite ===== -->
+      <div class="mpage" data-page="start">
+        <div class="top">
+          <div class="in hero">
+            <div>
+              <div class="eyebrow" data-en="Medical devices · Pharma · SMEs">Medizintechnik · Pharma · KMU</div>
+              <h1 data-en="Audits, training and consulting for medical devices and pharma.">Audits, Schulungen und Beratung für Medizintechnik und Pharma.</h1>
+              <p class="lead" data-en="To ISO 9001, ISO 13485, ISO 19011 and GMP. Structured, traceable and tailored to small and mid-sized companies.">Nach ISO 9001, ISO 13485, ISO 19011 und GMP. Strukturiert, nachvollziehbar und zugeschnitten auf kleine und mittlere Unternehmen.</p>
+              <div class="ctas">
+                <button class="btn p" type="button" data-goto="kontakt" data-en="Free intro call">Kostenloses Erstgespräch</button>
+                <button class="btn s" type="button" data-goto="leistungen" data-en="View services">Leistungen ansehen</button>
+              </div>
+            </div>
+            <div class="stats">
+              <div class="stat"><b>15+</b><span data-en="years in quality management">Jahre im Qualitätsmanagement</span></div>
+              <div class="stat"><b>200+</b><span data-en="audits conducted">durchgeführte Audits</span></div>
+              <div class="stat"><b>4</b><span data-en="standards and frameworks">Normen und Regelwerke</span></div>
+              <div class="stat"><b>DE/EN</b><span data-en="audit languages">Audit-Sprachen</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="in badgebar"><span>ISO 9001</span><span>ISO 13485</span><span>ISO 19011</span><span>GMP</span></div>
+
+        <section class="in sec">
+          <div class="sechead">
+            <div class="eyebrow" data-en="Services">Leistungen</div>
+            <h2 data-en="Three service areas, one dedicated contact">Drei Leistungsbereiche, eine feste Ansprechperson</h2>
+          </div>
+          <div class="grid3">
+            <div class="card">
+              <div class="ico" aria-hidden="true">✓</div>
+              <h3>Audits</h3>
+              <p data-en="Internal audits, supplier audits and mock audits to prepare for certification or regulatory inspection.">Interne Audits, Lieferantenaudits und Mock-Audits zur Vorbereitung auf Zertifizierung oder Behördeninspektion.</p>
+              <button class="textlink" type="button" data-goto="leistungen" data-en="View audits →">Zu den Audits →</button>
+            </div>
+            <div class="card">
+              <div class="ico" aria-hidden="true">≡</div>
+              <h3 data-en="Training">Schulungen</h3>
+              <p data-en="In-house and online training on ISO 13485, ISO 9001, GMP and auditor qualification per ISO 19011.">Inhouse- und Online-Schulungen zu ISO 13485, ISO 9001, GMP und zur Auditorenqualifizierung nach ISO 19011.</p>
+              <button class="textlink" type="button" data-goto="leistungen" data-en="View training →">Zu den Schulungen →</button>
+            </div>
+            <div class="card">
+              <div class="ico" aria-hidden="true">◇</div>
+              <h3 data-en="Consulting">Beratung</h3>
+              <p data-en="Building and developing your quality system, gap analyses and taking on the role of management representative.">Aufbau und Weiterentwicklung Ihres QM-Systems, Gap-Analysen und Übernahme der Rolle als Beauftragter der Leitung.</p>
+              <button class="textlink" type="button" data-goto="leistungen" data-en="View consulting →">Zur Beratung →</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec alt">
+          <div class="in sechead">
+            <div class="eyebrow" data-en="Getting started">Einstieg</div>
+            <h2 data-en="Your path to working together">Ihr Weg zur Zusammenarbeit</h2>
+            <p data-en="It starts with a free, no-obligation intro call.">Am Anfang steht ein kostenloses und unverbindliches Erstgespräch.</p>
+          </div>
+          <ol class="in steps">
+            <li><span class="n">01</span><b data-en="Get in touch">Kontaktaufnahme</b><span data-en="Via the form, email or phone. I get back to you personally within one working day and we set a date.">Per Formular, E-Mail oder Telefon. Ich melde mich innerhalb eines Werktags persönlich und wir vereinbaren einen Termin.</span></li>
+            <li><span class="n">02</span><b data-en="Free intro call">Kostenloses Erstgespräch</b><span data-en="About 30 minutes, no obligation. Where do you stand today, and what is your goal?">Ca. 30 Minuten, unverbindlich. Wo stehen Sie heute, und was ist Ihr Ziel?</span></li>
+            <li><span class="n">03</span><b data-en="Analysis and proposal">Analyse und Angebot</b><span data-en="I assess your situation and requirements and send a fixed proposal with audit plan or training agenda.">Ich bewerte Ausgangslage und Anforderungen und sende ein festes Angebot mit Auditplan oder Schulungsagenda.</span></li>
+            <li><span class="n">04</span><b data-en="Delivery">Umsetzung</b><span data-en="Audit or training on site or remote, with a report and recommended actions.">Audit oder Schulung vor Ort oder remote, mit Bericht und Maßnahmenempfehlungen.</span></li>
+          </ol>
+          <div class="in"><button class="btn d" type="button" data-goto="kontakt" data-en="Get free, no-obligation advice">Jetzt unverbindlich beraten lassen</button></div>
+        </section>
+
+        <section class="in sec">
+          <div class="split">
+            <div class="photo" data-en="Portrait photo">Portraitfoto</div>
+            <div class="txt">
+              <div class="eyebrow" data-en="About me">Über mich</div>
+              <h2>Vorname Nachname</h2>
+              <div class="rolel" data-en="Audits · Training · Consulting">Audits · Schulungen · Beratung</div>
+              <p data-en="Placeholder: two sentences about the person, e.g. more than 15 years of quality management in medical devices and pharma, most recently as head of quality at a medical device manufacturer.">Platzhalter: Zwei Sätze zur Person, z. B. über 15 Jahre Qualitätsmanagement in Medizintechnik und Pharma, zuletzt als Leitung QM bei einem Medizinproduktehersteller.</p>
+              <div class="actions"><button class="btn d" type="button" data-goto="kontakt" data-en="Book an intro call">Erstgespräch vereinbaren</button><button class="textlink" type="button" data-goto="ueber-mich" data-en="Career and certificates →">Werdegang und Zertifikate →</button></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="band">
+          <div class="in">
+            <div>
+              <h2 data-en="Planning an audit or need training?">Audit geplant oder Schulungsbedarf?</h2>
+              <p data-en="In a free intro call of about 30 minutes we work out what you need.">Im kostenlosen Erstgespräch klären wir in ca. 30 Minuten, was Sie brauchen.</p>
+            </div>
+            <button class="btn p" type="button" data-goto="kontakt" data-en="Book an intro call">Erstgespräch vereinbaren</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Leistungen ===== -->
+      <div class="mpage" data-page="leistungen" hidden>
+        <div class="top">
+          <div class="in pagehead">
+            <div class="eyebrow" data-en="Services">Leistungen</div>
+            <h1 data-en="Audits, training and consulting to ISO 9001, ISO 13485, ISO 19011 and GMP">Audits, Schulungen und Beratung nach ISO 9001, ISO 13485, ISO 19011 und GMP</h1>
+            <p class="lead" data-en="Clearly defined services with fixed scope, duration and deliverable.">Klar beschriebene Leistungen mit festem Umfang, Dauer und Ergebnis.</p>
+            <div class="subnav"><span class="chip">Audits</span><span class="chip" data-en="Training">Schulungen</span><span class="chip" data-en="Consulting">Beratung</span></div>
+          </div>
+        </div>
+
+        <section class="in sec">
+          <div class="sechead">
+            <div class="eyebrow">Audits</div>
+            <h2 data-en="Audits following the ISO 19011 method">Audits nach der Methodik der ISO 19011</h2>
+            <p data-en="Every audit is planned, risk-based and documented so that it can be traced.">Jedes Audit ist geplant, risikobasiert und nachvollziehbar dokumentiert.</p>
+          </div>
+          <div class="grid2">
+            <div class="card">
+              <h3 data-en="Internal audit">Internes Audit</h3>
+              <p data-en="Independent review of your quality management system, as required by the standard.">Unabhängige Prüfung Ihres QM-Systems, wie von der Norm gefordert.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 9001, ISO 13485</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1–2 days">1–2 Tage</dd>
+                <dt>Format</dt><dd data-en="On site or remote">Vor Ort oder remote</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Report within 10 working days">Bericht innerhalb von 10 Werktagen</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="Supplier audit">Lieferantenaudit</h3>
+              <p data-en="Evaluation of critical suppliers and contract manufacturers on your behalf.">Bewertung kritischer Lieferanten und Lohnhersteller in Ihrem Auftrag.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 13485, GMP</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1 day">1 Tag</dd>
+                <dt>Format</dt><dd data-en="On site at the supplier">Vor Ort beim Lieferanten</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Report with supplier rating">Bericht mit Lieferantenbewertung</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="Mock audit">Mock-Audit</h3>
+              <p data-en="Rehearsal audit before certification, recertification or a notified body visit.">Probe-Audit vor Zertifizierung, Rezertifizierung oder Besuch der Benannten Stelle.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 9001, ISO 13485</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1–3 days">1–3 Tage</dd>
+                <dt>Format</dt><dd data-en="On site">Vor Ort</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Graded findings and action plan">Bewertete Feststellungen und Maßnahmenplan</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="GMP audit">GMP-Audit</h3>
+              <p data-en="Audit of manufacturing, quality control and documentation in pharma.">Prüfung von Herstellung, Qualitätskontrolle und Dokumentation im Pharmaumfeld.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd data-en="EU GMP Guidelines">EU-GMP-Leitfaden</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1–2 days">1–2 Tage</dd>
+                <dt>Format</dt><dd data-en="On site">Vor Ort</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Report with CAPA recommendations">Bericht mit CAPA-Empfehlungen</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec alt">
+          <div class="in sechead">
+            <div class="eyebrow" data-en="Training">Schulungen</div>
+            <h2 data-en="Training adapted to your processes">Schulungen, angepasst an Ihre Prozesse</h2>
+            <p data-en="As in-house training at your site or live online.">Als Inhouse-Schulung bei Ihnen vor Ort oder live online.</p>
+          </div>
+          <div class="in grid2">
+            <div class="card">
+              <span class="tag">ISO 13485</span>
+              <h3 data-en="ISO 13485 fundamentals">ISO 13485 Grundlagen</h3>
+              <dl class="spec">
+                <dt data-en="Audience">Zielgruppe</dt><dd data-en="Staff at medical device companies">Mitarbeitende in der Medizintechnik</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1 day">1 Tag</dd>
+                <dt>Format</dt><dd data-en="In-house or online">Inhouse oder online</dd>
+                <dt data-en="Completion">Abschluss</dt><dd data-en="Certificate of attendance">Teilnahmebescheinigung</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <span class="tag">GMP</span>
+              <h3 data-en="GMP basics">GMP Basisschulung</h3>
+              <dl class="spec">
+                <dt data-en="Audience">Zielgruppe</dt><dd data-en="Production and QA staff">Mitarbeitende in Herstellung und QS</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="½ day">½ Tag</dd>
+                <dt>Format</dt><dd data-en="In-house or online">Inhouse oder online</dd>
+                <dt data-en="Completion">Abschluss</dt><dd data-en="Certificate of attendance">Teilnahmebescheinigung</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <span class="tag">ISO 19011</span>
+              <h3 data-en="Internal auditor per ISO 19011">Interne Auditoren nach ISO 19011</h3>
+              <dl class="spec">
+                <dt data-en="Audience">Zielgruppe</dt><dd data-en="Future internal auditors">Künftige interne Auditorinnen und Auditoren</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="2 days">2 Tage</dd>
+                <dt>Format</dt><dd data-en="In-house">Inhouse</dd>
+                <dt data-en="Completion">Abschluss</dt><dd data-en="Certificate with final test">Zertifikat mit Abschlusstest</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <span class="tag">ISO 9001</span>
+              <h3 data-en="ISO 9001 for managers">ISO 9001 für Führungskräfte</h3>
+              <dl class="spec">
+                <dt data-en="Audience">Zielgruppe</dt><dd data-en="Managers and process owners">Führungskräfte und Prozessverantwortliche</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="½ day">½ Tag</dd>
+                <dt>Format</dt><dd data-en="In-house or online">Inhouse oder online</dd>
+                <dt data-en="Completion">Abschluss</dt><dd data-en="Certificate of attendance">Teilnahmebescheinigung</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="in sec">
+          <div class="sechead">
+            <div class="eyebrow" data-en="Consulting">Beratung</div>
+            <h2 data-en="Consulting for your quality management system">Beratung für Ihr QM-System</h2>
+            <p data-en="From gap analysis to taking on the role of management representative. A system I have consulted on, I do not audit myself.">Von der Gap-Analyse bis zur Übernahme der Rolle als Beauftragter der Leitung. Ein System, das ich berate, auditiere ich nicht selbst.</p>
+          </div>
+          <div class="grid2">
+            <div class="card feature">
+              <span class="tag" data-en="Interim or long-term">Interim oder dauerhaft</span>
+              <h3 data-en="External management representative">Beauftragter der Leitung (extern)</h3>
+              <p data-en="Taking on the role per ISO 13485 clause 5.5.2, or as quality manager in an ISO 9001 system. Ideal when the position is vacant or the team is too small for its own role.">Übernahme der Rolle nach ISO 13485 Abschnitt 5.5.2 bzw. als QMB im ISO-9001-System. Passend, wenn die Stelle unbesetzt ist oder das Team für eine eigene Stelle zu klein ist.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 13485 (5.5.2), ISO 9001</dd>
+                <dt data-en="Scope">Umfang</dt><dd data-en="e.g. 2 days per month">z. B. 2 Tage pro Monat</dd>
+                <dt>Format</dt><dd data-en="On site and remote">Vor Ort und remote</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Management review and reporting to top management">Managementbewertung und Berichterstattung an die Leitung</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="Gap analysis">Gap-Analyse</h3>
+              <p data-en="Comparison of your quality system with the requirements of the standard.">Abgleich Ihres QM-Systems mit den Anforderungen der Norm.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 9001, ISO 13485, GMP</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="1–3 days">1–3 Tage</dd>
+                <dt>Format</dt><dd data-en="On site or remote">Vor Ort oder remote</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Gap report with prioritised action plan">Gap-Bericht mit priorisiertem Maßnahmenplan</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="Setting up and developing your QMS">QM-System aufbauen und weiterentwickeln</h3>
+              <p data-en="Processes, procedures and documentation that fit your company and hold up in an audit.">Prozesse, Verfahrensanweisungen und Dokumentation, die zu Ihrem Unternehmen passen und im Audit bestehen.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 9001, ISO 13485</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="Project-based">Projektbasiert</dd>
+                <dt>Format</dt><dd data-en="On site and remote">Vor Ort und remote</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Process landscape, procedures, quality manual">Prozesslandschaft, Verfahrensanweisungen, QM-Handbuch</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <h3 data-en="Certification support">Zertifizierungsbegleitung</h3>
+              <p data-en="Support from planning to the certification audit, including handling of findings.">Begleitung von der Planung bis zum Zertifizierungsaudit, einschließlich Bearbeitung der Feststellungen.</p>
+              <dl class="spec">
+                <dt data-en="Basis">Grundlage</dt><dd>ISO 9001, ISO 13485</dd>
+                <dt data-en="Duration">Dauer</dt><dd data-en="Project-based">Projektbasiert</dd>
+                <dt>Format</dt><dd data-en="On site and remote">Vor Ort und remote</dd>
+                <dt data-en="Deliverable">Ergebnis</dt><dd data-en="Certification-ready system, closed findings">Zertifizierungsreifes System, abgeschlossene Feststellungen</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="in sec">
+          <div class="notfound">
+            <div class="nf-text">
+              <h2 data-en="Your topic is not listed?">Ihr Anliegen ist nicht dabei?</h2>
+              <p data-en="Audits, training and consulting can also be tailored to your company: further regulations, combined formats or individual processes.">Audits, Schulungen und Beratung lassen sich auch individuell zuschneiden: auf weitere Regelwerke, kombinierte Formate oder einzelne Prozesse.</p>
+              <button class="btn d" type="button" data-goto="kontakt" data-en="Get free, no-obligation advice">Jetzt unverbindlich beraten lassen</button>
+            </div>
+            <div class="person">
+              <div class="photo sm" data-en="Photo">Foto</div>
+              <div>
+                <b>Vorname Nachname</b>
+                <span data-en="Your contact">Ihre Ansprechperson</span>
+                <button class="textlink" type="button" data-goto="kontakt" data-en="Book an intro call →">Erstgespräch vereinbaren →</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec alt">
+          <div class="in sechead">
+            <div class="eyebrow" data-en="Getting started">Einstieg</div>
+            <h2 data-en="Your path to working together">Ihr Weg zur Zusammenarbeit</h2>
+          </div>
+          <ol class="in steps">
+            <li><span class="n">01</span><b data-en="Get in touch">Kontaktaufnahme</b><span data-en="Via the form, email or phone. I get back to you personally within one working day.">Per Formular, E-Mail oder Telefon. Ich melde mich innerhalb eines Werktags persönlich.</span></li>
+            <li><span class="n">02</span><b data-en="Free intro call">Kostenloses Erstgespräch</b><span data-en="About 30 minutes, no obligation. Challenges, goals, timing.">Ca. 30 Minuten, unverbindlich. Herausforderungen, Ziele, Zeitrahmen.</span></li>
+            <li><span class="n">03</span><b data-en="Analysis and proposal">Analyse und Angebot</b><span data-en="Fixed proposal with audit plan or training agenda.">Festes Angebot mit Auditplan oder Schulungsagenda.</span></li>
+            <li><span class="n">04</span><b data-en="Delivery">Umsetzung</b><span data-en="On site or remote, with a report and recommended actions.">Vor Ort oder remote, mit Bericht und Maßnahmenempfehlungen.</span></li>
+          </ol>
+          <div class="in"><button class="btn d" type="button" data-goto="kontakt" data-en="Get free, no-obligation advice">Jetzt unverbindlich beraten lassen</button></div>
+        </section>
+      </div>
+
+      <!-- ===== Über mich ===== -->
+      <div class="mpage" data-page="ueber-mich" hidden>
+        <div class="top">
+          <div class="in abouthead">
+            <div class="photo" data-en="Portrait photo">Portraitfoto</div>
+            <div>
+              <div class="eyebrow" data-en="About me">Über mich</div>
+              <h1>Vorname Nachname</h1>
+              <div class="role" data-en="Quality management · Audits · Training · Consulting">Qualitätsmanagement · Audits · Schulungen · Beratung</div>
+              <p class="lead" style="margin-top:12px" data-en="Placeholder: a short paragraph on experience and motivation. Why the step into self-employment, and what clients can expect from working together.">Platzhalter: Kurzer Absatz zu Erfahrung und Motivation. Warum der Schritt in die Selbstständigkeit, und was Kunden von der Zusammenarbeit erwarten können.</p>
+              <div class="facts">
+                <span class="fact" data-en="15+ years in QM">15+ Jahre im QM</span>
+                <span class="fact" data-en="Medical devices and pharma">Medizintechnik und Pharma</span>
+                <span class="fact" data-en="German, English">Deutsch, Englisch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="in sec">
+          <div class="sechead">
+            <div class="eyebrow" data-en="Career">Werdegang</div>
+            <h2 data-en="Experience from both sides of the audit">Erfahrung von beiden Seiten des Audits</h2>
+          </div>
+          <ol class="timeline">
+            <li><span class="yr" data-en="since 2026">seit 2026</span><div class="what"><b data-en="Self-employed: audits and training">Selbstständig: Audits und Schulungen</b><span>NAME.QM, Musterstadt</span></div></li>
+            <li><span class="yr">2019 – 2025</span><div class="what"><b data-en="Head of Quality Management">Leitung Qualitätsmanagement</b><span data-en="Medical device manufacturer, approx. 250 employees">Medizinproduktehersteller, ca. 250 Mitarbeitende</span></div></li>
+            <li><span class="yr">2014 – 2019</span><div class="what"><b data-en="Quality Assurance, GMP environment">Qualitätssicherung im GMP-Umfeld</b><span data-en="Pharmaceutical company">Pharmazeutisches Unternehmen</span></div></li>
+            <li><span class="yr">2008 – 2014</span><div class="what"><b data-en="Quality engineering">Qualitätsingenieurwesen</b><span data-en="Supplier to the medical device industry">Zulieferer der Medizintechnik</span></div></li>
+            <li><span class="yr">2003 – 2008</span><div class="what"><b data-en="Degree in process engineering (Dipl.-Ing.)">Studium Verfahrenstechnik (Dipl.-Ing.)</b><span data-en="University of Applied Sciences Musterstadt">Hochschule Musterstadt</span></div></li>
+          </ol>
+        </section>
+
+        <section class="sec alt">
+          <div class="in sechead">
+            <div class="eyebrow" data-en="Certificates">Zertifikate</div>
+            <h2 data-en="Qualifications with issuing body">Qualifikationen mit ausstellender Stelle</h2>
+          </div>
+          <div class="in certs">
+            <div class="cert"><span class="std">ISO 13485</span><b>Lead Auditor ISO 13485:2016</b><span data-en="Issuing body · 20XX">Ausstellende Stelle · 20XX</span></div>
+            <div class="cert"><span class="std">ISO 9001</span><b>Lead Auditor ISO 9001:2015</b><span data-en="Issuing body · 20XX">Ausstellende Stelle · 20XX</span></div>
+            <div class="cert"><span class="std">ISO 19011</span><b data-en="Auditor qualification per ISO 19011:2018">Auditorenqualifizierung nach ISO 19011:2018</b><span data-en="Issuing body · 20XX">Ausstellende Stelle · 20XX</span></div>
+            <div class="cert"><span class="std">GMP</span><b data-en="Certified GMP Auditor">Zertifizierte GMP-Auditorin / -Auditor</b><span data-en="Issuing body · 20XX">Ausstellende Stelle · 20XX</span></div>
+          </div>
+        </section>
+
+        <section class="in sec">
+          <div class="sechead">
+            <div class="eyebrow" data-en="Principles">Grundsätze</div>
+            <h2 data-en="What you can rely on">Worauf Sie sich verlassen können</h2>
+          </div>
+          <div class="principles">
+            <div class="card"><h3 data-en="Independent">Unabhängig</h3><p data-en="No conflicts of interest: I never consult on and audit the same system.">Keine Interessenkonflikte: Beratung und Audit desselben Systems schließen sich aus.</p></div>
+            <div class="card"><h3 data-en="Confidential">Vertraulich</h3><p data-en="Non-disclosure agreement available before the first conversation.">Vertraulichkeitsvereinbarung auf Wunsch schon vor dem ersten Gespräch.</p></div>
+            <div class="card"><h3 data-en="Insured">Abgesichert</h3><p data-en="Professional liability insurance for every engagement.">Berufshaftpflichtversicherung für alle Aufträge.</p></div>
+          </div>
+        </section>
+
+        <div class="band">
+          <div class="in">
+            <div>
+              <h2 data-en="Let's talk">Lassen Sie uns sprechen</h2>
+              <p data-en="The intro call of about 30 minutes is free and without obligation.">Das Erstgespräch (ca. 30 Minuten) ist kostenlos und unverbindlich.</p>
+            </div>
+            <button class="btn p" type="button" data-goto="kontakt" data-en="Book an intro call">Erstgespräch vereinbaren</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Kontakt ===== -->
+      <div class="mpage" data-page="kontakt" hidden>
+        <div class="top">
+          <div class="in pagehead">
+            <div class="eyebrow" data-en="Contact">Kontakt</div>
+            <h1 data-en="Book your free intro call">Kostenloses Erstgespräch vereinbaren</h1>
+            <p class="lead" data-en="About 30 minutes, free and without obligation. Send your enquiry and I will get back to you personally within one working day with a proposed date.">Ca. 30 Minuten, kostenlos und unverbindlich. Senden Sie Ihre Anfrage, ich melde mich innerhalb eines Werktags persönlich mit einem Terminvorschlag.</p>
+          </div>
+        </div>
+
+        <section class="in sec">
+          <div class="contact">
+            <div>
+              <form id="contact-form" novalidate>
+                <fieldset>
+                  <legend data-en="What is it about?">Worum geht es?</legend>
+                  <div class="seg">
+                    <label><input type="radio" name="topic" id="topic-audit" value="audit" checked><span>Audit</span></label>
+                    <label><input type="radio" name="topic" id="topic-training" value="training"><span data-en="Training">Schulung</span></label>
+                    <label><input type="radio" name="topic" id="topic-consulting" value="consulting"><span data-en="Consulting">Beratung</span></label>
+                    <label><input type="radio" name="topic" id="topic-other" value="other"><span data-en="Other">Sonstiges</span></label>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend data-en="Salutation">Anrede</legend>
+                  <div class="seg">
+                    <label><input type="radio" name="salutation" id="sal-ms" value="ms"><span data-en="Ms">Frau</span></label>
+                    <label><input type="radio" name="salutation" id="sal-mr" value="mr"><span data-en="Mr">Herr</span></label>
+                    <label><input type="radio" name="salutation" id="sal-none" value="none"><span data-en="Not specified">Keine Angabe</span></label>
+                  </div>
+                </fieldset>
+                <div class="row2">
+                  <div class="field"><label for="f-name"><span data-en="Name">Name</span> <span class="req">*</span></label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+                  <div class="field"><label for="f-company"><span data-en="Company">Unternehmen</span> <span class="req">*</span></label><input type="text" id="f-company" name="company" autocomplete="organization" required></div>
+                </div>
+                <div class="row2">
+                  <div class="field"><label for="f-email"><span data-en="Business email">Geschäftliche E-Mail</span> <span class="req">*</span></label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+                  <div class="field"><label for="f-phone" data-en="Phone (optional)">Telefon (optional)</label><input type="tel" id="f-phone" name="phone" autocomplete="tel"></div>
+                </div>
+                <div class="field">
+                  <label for="f-time" data-en="Preferred timeframe">Gewünschter Zeitraum</label>
+                  <select id="f-time" name="timeframe">
+                    <option value="" data-en="Please select">Bitte wählen</option>
+                    <option value="asap" data-en="As soon as possible">So bald wie möglich</option>
+                    <option value="1-3" data-en="Within 1–3 months">In 1–3 Monaten</option>
+                    <option value="3-6" data-en="Within 3–6 months">In 3–6 Monaten</option>
+                    <option value="open" data-en="Not decided yet">Noch offen</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-msg"><span data-en="Message">Nachricht</span> <span class="req">*</span></label>
+                  <textarea id="f-msg" name="message" required placeholder="z. B. Lieferantenaudit nach ISO 13485, ein Standort, Raum Stuttgart" data-en-ph="e.g. supplier audit to ISO 13485, one site, Stuttgart area"></textarea>
+                </div>
+                <label class="consent" for="f-consent"><input type="checkbox" id="f-consent" name="consent" required><span data-en="I have read the privacy policy and agree to my details being processed to handle this enquiry.">Ich habe die Datenschutzerklärung gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden.</span></label>
+                <p class="hint" id="form-hint" data-en="* Required field">* Pflichtfeld</p>
+                <button class="btn d submit" type="submit" data-en="Request intro call">Erstgespräch anfragen</button>
+              </form>
+              <div class="success" id="form-success" hidden>
+                <b data-en="Thank you, your enquiry has been received.">Vielen Dank, Ihre Anfrage ist angekommen.</b>
+                <p data-en="You will receive a confirmation by email and, within one working day, a proposed date for the intro call.">Sie erhalten eine Bestätigung per E-Mail und innerhalb eines Werktags einen Terminvorschlag für das Erstgespräch.</p>
+                <p class="demo" data-en="Draft: nothing is sent from this preview.">Entwurf: In dieser Vorschau wird nichts versendet.</p>
+              </div>
+            </div>
+
+            <div class="aside">
+              <div class="box promise">
+                <div class="person dark">
+                  <div class="photo sm" data-en="Photo">Foto</div>
+                  <div><b>Vorname Nachname</b><span data-en="Your contact for audits and training">Ihre Ansprechperson für Audits und Schulungen</span></div>
+                </div>
+                <p data-en="Every enquiry is answered personally within one working day.">Jede Anfrage wird innerhalb eines Werktags persönlich beantwortet.</p>
+              </div>
+              <div class="box">
+                <h3 data-en="Direct contact">Direkter Kontakt</h3>
+                <div class="kv"><span data-en="Phone">Telefon</span><b>+49 000 0000000</b></div>
+                <div class="kv"><span data-en="Email">E-Mail</span><b>kontakt@name-qm.de</b></div>
+                <div class="kv"><span>LinkedIn</span><b>linkedin.com/in/name</b></div>
+                <div class="kv"><span data-en="Location">Standort</span><b data-en="Musterstadt, Germany. Audits throughout Germany and Europe.">Musterstadt. Audits deutschlandweit und im europäischen Ausland.</b></div>
+              </div>
+              <div class="box">
+                <h3 data-en="What happens next?">Wie geht es weiter?</h3>
+                <ol class="next">
+                  <li data-en="You receive a confirmation by email.">Sie erhalten eine Eingangsbestätigung per E-Mail.</li>
+                  <li data-en="I get back to you personally within one working day with a proposed date.">Ich melde mich innerhalb eines Werktags persönlich mit einem Terminvorschlag.</li>
+                  <li data-en="Free intro call, about 30 minutes, no obligation.">Kostenloses Erstgespräch, ca. 30 Minuten, unverbindlich.</li>
+                  <li data-en="Afterwards you receive a fixed proposal.">Danach erhalten Sie ein festes Angebot.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Shared footer -->
+      <footer class="foot">
+        <div class="in cols">
+          <div><b>NAME.QM</b><span data-en="Audits, training and consulting for medical devices and pharma.">Audits, Schulungen und Beratung für Medizintechnik und Pharma.</span></div>
+          <div><b data-en="Contact">Kontakt</b><span>+49 000 0000000</span><span>kontakt@name-qm.de</span></div>
+          <div><b data-en="Legal">Rechtliches</b><span data-en="Legal notice">Impressum</span><span data-en="Privacy policy">Datenschutz</span><span>LinkedIn</span></div>
+        </div>
+        <div class="in legal" data-en="© 2026 First Last. All rights reserved.">© 2026 Vorname Nachname. Alle Rechte vorbehalten.</div>
+      </footer>
+    </div>
+  </div>
+
+  <section class="open" aria-labelledby="open-title">
+    <h2 id="open-title">Noch offen</h2>
+    <ul>
+      <li><strong>Preise:</strong> Tagessatz „ab“ zeigen oder nur „auf Anfrage“?</li>
+      <li><strong>Referenzen:</strong> Gibt es Kundenstimmen oder Logos, die gezeigt werden dürfen?</li>
+      <li><strong>Terminbuchung:</strong> Zusätzlich zum Formular einen Kalender für das Erstgespräch anbieten?</li>
+      <li><strong>Pflichtseiten:</strong> Impressum und Datenschutzerklärung, die Texte liefert die Person selbst.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  (function () {
+    var PATHS = {
+      "start":      { de: "/de",            en: "/en" },
+      "leistungen": { de: "/de/leistungen", en: "/en/services" },
+      "ueber-mich": { de: "/de/ueber-mich", en: "/en/about" },
+      "kontakt":    { de: "/de/kontakt",    en: "/en/contact" }
+    };
+    var lang = "de";
+    var current = "start";
+    var frame = document.getElementById("frame");
+    var urlEl = document.getElementById("url");
+    var pages = document.querySelectorAll(".mpage");
+    var tabs = document.querySelectorAll(".tab");
+    var navlinks = document.querySelectorAll(".navlink");
+    var switches = document.querySelectorAll(".lang-switch");
+    var texts = document.querySelectorAll("[data-en]");
+    var placeholders = document.querySelectorAll("[data-en-ph]");
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    texts.forEach(function (el) { el.dataset.de = el.textContent; });
+    placeholders.forEach(function (el) { el.dataset.dePh = el.getAttribute("placeholder") || ""; });
+
+    function updateUrl() { urlEl.textContent = "www.name-qm.de" + PATHS[current][lang]; }
+
+    function applyLang() {
+      texts.forEach(function (el) { el.textContent = lang === "en" ? el.dataset.en : el.dataset.de; });
+      placeholders.forEach(function (el) { el.setAttribute("placeholder", lang === "en" ? el.dataset.enPh : el.dataset.dePh); });
+      switches.forEach(function (s) {
+        s.setAttribute("aria-checked", lang === "en" ? "true" : "false");
+        s.setAttribute("aria-label", lang === "en" ? "Switch language to German" : "Sprache auf Englisch umschalten");
+      });
+      document.getElementById("mk").setAttribute("lang", lang);
+      updateUrl();
+    }
+
+    function show(name, scroll) {
+      if (!PATHS[name]) name = "start";
+      current = name;
+      pages.forEach(function (p) { p.hidden = p.dataset.page !== name; });
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", t.dataset.tab === name ? "true" : "false"); });
+      navlinks.forEach(function (l) {
+        if (l.dataset.goto === name) l.setAttribute("aria-current", "page"); else l.removeAttribute("aria-current");
+      });
+      updateUrl();
+      if (scroll && frame.getBoundingClientRect().top < 0) {
+        frame.scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" });
+      }
+    }
+
+    tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.tab, false); }); });
+    document.querySelectorAll("[data-goto]").forEach(function (el) {
+      el.addEventListener("click", function () { show(el.dataset.goto, true); });
+    });
+    switches.forEach(function (s) { s.addEventListener("click", function () { lang = lang === "de" ? "en" : "de"; applyLang(); }); });
+
+    // Contact form: validate in place, then show the confirmation state. Nothing is sent from the draft.
+    var form = document.getElementById("contact-form");
+    var success = document.getElementById("form-success");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      form.hidden = true;
+      success.hidden = false;
+    });
+
+    var initial = (location.hash || "").replace("#", "");
+    applyLang();
+    show(PATHS[initial] ? initial : "start", false);
+  })();
+
+  // Comment button: opens the claude.ai comment composer on the page currently shown in the preview.
+  (async function () {
+    var comments = null;
+    try { comments = window.claude && window.claude.use ? await window.claude.use("comments") : null; } catch (e) { comments = null; }
+    if (!comments) return;
+    var btn = document.querySelector(".comment-btn");
+    btn.hidden = false;
+    btn.addEventListener("click", async function () {
+      var target = document.querySelector('.mpage:not([hidden])') || document.getElementById("frame");
+      try {
+        await comments.openComposer({ element: target });
+      } catch (err) {
+        var code = err && err.code;
+        if (code === "unavailable" || code === "not_granted" || code === "capability_disabled" || code === "capability_removed") btn.hidden = true;
+      }
+    });
+  })();
+</script>

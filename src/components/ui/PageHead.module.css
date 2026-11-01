@@ -1,0 +1,27 @@
+.band {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+.inner {
+  display: grid;
+  gap: 6px;
+  padding-block: clamp(36px, 5vw, 56px);
+}
+
+.title {
+  margin: 6px 0 8px;
+  font-size: clamp(28px, 3.8vw, 40px);
+  line-height: 1.13;
+  font-weight: 700;
+  color: var(--white);
+  max-width: 30ch;
+}
+
+.lead {
+  margin: 0;
+  color: var(--on-navy-2);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 62ch;
+}

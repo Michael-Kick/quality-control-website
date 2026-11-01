@@ -1,0 +1,44 @@
+.footer {
+  background: var(--navy-deep);
+  color: var(--on-navy-2);
+  font-size: 14.5px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 26px;
+  padding-block: 40px 26px;
+}
+
+.col {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.col a {
+  color: var(--on-navy-2);
+  text-decoration: none;
+  justify-self: start;
+}
+
+.col a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.heading {
+  color: var(--white);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.legal {
+  border-top: 1px solid #1c2c3c;
+  padding-block: 16px;
+  font-size: 13px;
+  color: #7d90a3;
+}

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "defaultTitle": "NAME.QM · Audits, Schulungen und Beratung für Medizintechnik und Pharma",
+    "description": "Audits, Schulungen und Beratung nach ISO 9001, ISO 13485, ISO 19011 und GMP für kleine und mittlere Unternehmen aus Medizintechnik und Pharma."
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "about": "Über mich",
+    "contact": "Kontakt",
+    "cta": "Termin vereinbaren",
+    "mainNav": "Hauptmenü",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "skipToContent": "Zum Inhalt springen",
+    "homeLink": "Zur Startseite"
+  },
+  "langSwitch": {
+    "label": "Sprache auf Englisch umschalten"
+  },
+  "cta": {
+    "introCall": "Kostenloses Erstgespräch",
+    "bookIntroCall": "Erstgespräch vereinbaren",
+    "bookIntroCallArrow": "Erstgespräch vereinbaren →",
+    "adviceNoObligation": "Jetzt unverbindlich beraten lassen",
+    "viewServices": "Leistungen ansehen"
+  },
+  "process": {
+    "eyebrow": "Einstieg",
+    "title": "Ihr Weg zur Zusammenarbeit",
+    "intro": "Am Anfang steht ein kostenloses und unverbindliches Erstgespräch.",
+    "steps": {
+      "contact": {
+        "title": "Kontaktaufnahme",
+        "text": "Per Formular, E-Mail oder Telefon. Ich melde mich innerhalb eines Werktags persönlich und wir vereinbaren einen Termin."
+      },
+      "call": {
+        "title": "Kostenloses Erstgespräch",
+        "text": "Ca. 30 Minuten, unverbindlich. Wo stehen Sie heute, und was ist Ihr Ziel?"
+      },
+      "proposal": {
+        "title": "Analyse und Angebot",
+        "text": "Ich bewerte Ausgangslage und Anforderungen und sende ein festes Angebot mit Auditplan oder Schulungsagenda."
+      },
+      "delivery": {
+        "title": "Umsetzung",
+        "text": "Audit oder Schulung vor Ort oder remote, mit Bericht und Maßnahmenempfehlungen."
+      }
+    }
+  },
+  "person": {
+    "role": "Ihre Ansprechperson",
+    "roleLong": "Ihre Ansprechperson für Audits und Schulungen",
+    "photo": "Portraitfoto",
+    "photoShort": "Foto"
+  },
+  "footer": {
+    "tagline": "Audits, Schulungen und Beratung für Medizintechnik und Pharma.",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die angeforderte Seite existiert nicht oder wurde verschoben.",
+    "back": "Zur Startseite"
+  }
+}

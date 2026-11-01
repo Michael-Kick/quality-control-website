@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--mist);
+  border-radius: var(--radius-lg);
+}
+
+.dark {
+  background: var(--navy-2);
+  padding: 12px;
+}
+
+.body {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.dark .name {
+  color: var(--white);
+}
+
+.role {
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.dark .role {
+  color: var(--on-navy-2);
+}
