@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui/Section";
 import { siteConfig } from "@/config/site";
 import styles from "./AboutHead.module.css";
 
-const FACT_KEYS = ["experience", "industries", "languages"] as const;
+const FACT_KEYS = ["industries"] as const;
 
 /** Navy page header with portrait, name, role line, intro and fact chips. */
 export async function AboutHead() {

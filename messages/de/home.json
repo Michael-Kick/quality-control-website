@@ -9,10 +9,6 @@
     "lead": "Nach ISO 9001, ISO 13485, ISO 19011 und GMP. Strukturiert, nachvollziehbar und zugeschnitten auf kleine und mittlere Unternehmen.",
     "statsLabel": "Auf einen Blick",
     "stats": {
-      "experience": {
-        "value": "15+",
-        "label": "Jahre im Qualitätsmanagement"
-      },
       "audits": {
         "value": "200+",
         "label": "durchgeführte Audits"
@@ -20,10 +16,6 @@
       "standards": {
         "value": "4",
         "label": "Normen und Regelwerke"
-      },
-      "languages": {
-        "value": "DE/EN",
-        "label": "Audit-Sprachen"
       }
     }
   },
@@ -52,7 +44,7 @@
   "about": {
     "eyebrow": "Über mich",
     "role": "Audits · Schulungen · Beratung",
-    "text": "Platzhalter: Zwei Sätze zur Person, z. B. über 15 Jahre Qualitätsmanagement in Medizintechnik und Pharma, zuletzt als Leitung QM bei einem Medizinproduktehersteller.",
+    "text": "Platzhalter: Zwei Sätze zur Person, z. B. Erfahrung im Qualitätsmanagement in Medizintechnik und Pharma, zuletzt als Leitung QM bei einem Medizinproduktehersteller.",
     "link": "Werdegang und Zertifikate"
   },
   "cta": {

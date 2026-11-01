@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Section";
 import styles from "./Hero.module.css";
 
-const STAT_KEYS = ["experience", "audits", "standards", "languages"] as const;
+const STAT_KEYS = ["audits", "standards"] as const;
 
 /** Navy opening band of the home page: claim, two calls to action and four key figures. */
 export async function Hero() {

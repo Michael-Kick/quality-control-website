@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "About: career and qualifications",
-    "description": "Career, certificates and principles: more than 15 years of quality management in medical devices and pharma, with lead auditor qualifications for ISO 13485, ISO 9001 and GMP."
+    "description": "Career, certificates and principles: quality management in medical devices and pharma, with lead auditor qualifications for ISO 13485, ISO 9001 and GMP."
   },
   "head": {
     "eyebrow": "About me",
@@ -9,9 +9,7 @@
     "lead": "Placeholder: a short paragraph on experience and motivation. Why the step into self-employment, and what clients can expect from working together.",
     "factsLabel": "Profile at a glance",
     "facts": {
-      "experience": "15+ years in QM",
-      "industries": "Medical devices and pharma",
-      "languages": "German, English"
+      "industries": "Medical devices and pharma"
     }
   },
   "career": {

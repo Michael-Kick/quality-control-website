@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Über mich: Werdegang und Qualifikationen",
-    "description": "Werdegang, Zertifikate und Grundsätze: über 15 Jahre Qualitätsmanagement in Medizintechnik und Pharma, Lead-Auditor-Qualifikationen nach ISO 13485 und ISO 9001 sowie GMP."
+    "description": "Werdegang, Zertifikate und Grundsätze: Qualitätsmanagement in Medizintechnik und Pharma, Lead-Auditor-Qualifikationen nach ISO 13485 und ISO 9001 sowie GMP."
   },
   "head": {
     "eyebrow": "Über mich",
@@ -9,9 +9,7 @@
     "lead": "Platzhalter: Kurzer Absatz zu Erfahrung und Motivation. Warum der Schritt in die Selbstständigkeit, und was Kunden von der Zusammenarbeit erwarten können.",
     "factsLabel": "Kurzprofil",
     "facts": {
-      "experience": "15+ Jahre im QM",
-      "industries": "Medizintechnik und Pharma",
-      "languages": "Deutsch, Englisch"
+      "industries": "Medizintechnik und Pharma"
     }
   },
   "career": {

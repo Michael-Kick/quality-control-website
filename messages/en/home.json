@@ -9,10 +9,6 @@
     "lead": "To ISO 9001, ISO 13485, ISO 19011 and GMP. Structured, traceable and tailored to small and mid-sized companies.",
     "statsLabel": "At a glance",
     "stats": {
-      "experience": {
-        "value": "15+",
-        "label": "years in quality management"
-      },
       "audits": {
         "value": "200+",
         "label": "audits conducted"
@@ -20,10 +16,6 @@
       "standards": {
         "value": "4",
         "label": "standards and frameworks"
-      },
-      "languages": {
-        "value": "DE/EN",
-        "label": "audit languages"
       }
     }
   },
@@ -52,7 +44,7 @@
   "about": {
     "eyebrow": "About me",
     "role": "Audits · Training · Consulting",
-    "text": "Placeholder: two sentences about the person, e.g. more than 15 years of quality management in medical devices and pharma, most recently as head of quality at a medical device manufacturer.",
+    "text": "Placeholder: two sentences about the person, e.g. experience in quality management in medical devices and pharma, most recently as head of quality at a medical device manufacturer.",
     "link": "Career and certificates"
   },
   "cta": {
