@@ -1,0 +1,4 @@
+/* Keeps the section start below the sticky header (64px) when jumping to #audits etc. */
+.anchor {
+  scroll-margin-top: 64px;
+}

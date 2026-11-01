@@ -1,1 +1,76 @@
-{}
+{
+  "notice": "<b>Placeholder:</b> This text must be completed and legally reviewed before publication.",
+  "imprint": {
+    "meta": {
+      "title": "Legal notice",
+      "description": "Legal notice for {brand}: provider information under Section 5 of the German Digital Services Act (DDG) with name, address, contact details and consumer dispute resolution."
+    },
+    "title": "Legal notice",
+    "lead": "Provider information under the German Digital Services Act (DDG).",
+    "sections": {
+      "provider": {
+        "title": "Information according to Section 5 DDG",
+        "body": "<p>{name}<br></br>[Business name, e.g. {brand}]<br></br>[Street and house number]<br></br>[Postcode] {city}<br></br>Germany</p>"
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "<p>Phone: <tel>{phone}</tel><br></br>Email: <mail>{email}</mail></p>"
+      },
+      "vat": {
+        "title": "VAT ID",
+        "body": "<p>VAT identification number according to Section 27a of the German VAT Act (UStG): [DE000000000]</p><p>[If there is no VAT ID: state an existing business identification number (Wirtschafts-Identifikationsnummer) instead or remove this section.]</p>"
+      },
+      "responsible": {
+        "title": "Responsible for content according to Section 18(2) MStV",
+        "body": "<p>{name}<br></br>[Street and house number]<br></br>[Postcode] {city}</p>"
+      },
+      "dispute": {
+        "title": "Consumer dispute resolution",
+        "body": "<p>I am neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board. [Please check and confirm.]</p>"
+      }
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy",
+      "description": "How {brand} processes personal data: hosting, contact form, email delivery, self-hosted fonts, no cookies, and your rights under the GDPR."
+    },
+    "title": "Privacy policy",
+    "lead": "Which personal data is processed when you visit this website, for what purpose, and what rights you have.",
+    "sections": {
+      "controller": {
+        "title": "Controller",
+        "body": "<p>The controller responsible for processing personal data on this website within the meaning of the General Data Protection Regulation (GDPR) is:</p><p>{name}<br></br>[Street and house number]<br></br>[Postcode] {city}<br></br>Germany<br></br>Phone: <tel>{phone}</tel><br></br>Email: <mail>{email}</mail></p><p>No data protection officer has been appointed, as there is no legal obligation to do so. [Please check.]</p>"
+      },
+      "hosting": {
+        "title": "Hosting and server log files",
+        "body": "<p>This website is hosted by [name and address of the hosting provider]. Each time a page is requested, the provider automatically processes data transmitted by your browser on my behalf (server log files):</p><ul><li>IP address</li><li>date and time of access</li><li>page or file requested</li><li>previously visited page (referrer)</li><li>browser and operating system used</li></ul><p>This data is technically necessary to deliver the website and to ensure its security and stability. The legal basis is Art. 6(1)(f) GDPR. My legitimate interest lies in operating the website securely and without disruption.</p><p>A data processing agreement under Art. 28 GDPR is in place with the provider. Log files are deleted after [number] days. [Check details with the provider. If data is processed outside the EU, add information on the transfer to third countries.]</p>"
+      },
+      "contact": {
+        "title": "Contact form and email",
+        "body": "<p>When you write to me using the contact form, I process the information you provide: subject of your enquiry, form of address (optional), name, company, business email address, phone number (optional), preferred time frame (optional) and your message. When you send me an email, I process your email address and the content of your message.</p><p>I use this data solely to handle and answer your enquiry. After submitting the form, you receive an automatic confirmation at the email address you provided.</p><p>The legal basis is Art. 6(1)(b) GDPR if your enquiry relates to a contract or to steps prior to entering into a contract. In all other cases, the legal basis is Art. 6(1)(f) GDPR; my legitimate interest lies in answering your enquiry.</p><p>I delete your data once your enquiry has been fully dealt with, at the latest after [number] months, unless statutory retention obligations apply. [Define the storage period.]</p>"
+      },
+      "resend": {
+        "title": "Email delivery via Resend",
+        "body": "<p>To send messages from the contact form and the confirmation email, I use the Resend service provided by Resend, Inc., [address], USA. Resend processes your form entries, your email address and technical delivery data (for example time and delivery status) as a processor on my behalf (Art. 28 GDPR).</p><p>In the process, personal data may be transferred to the USA. The transfer is based on the European Commission’s adequacy decision for the EU-US Data Privacy Framework, insofar as Resend is certified under it, and otherwise on the European Commission’s standard contractual clauses (Art. 46(2)(c) GDPR). [Please check.]</p><p>For more information, see Resend’s privacy policy: [insert link]</p>"
+      },
+      "fonts": {
+        "title": "Fonts",
+        "body": "<p>This website uses the IBM Plex Sans typeface. The font files are part of the website and are delivered from the same server. No connection to servers of Google or other third parties is made when you visit the website.</p>"
+      },
+      "cookies": {
+        "title": "No cookies, no tracking",
+        "body": "<p>This website does not set any cookies and does not use any analytics or tracking tools. No usage profiles are created and no data is passed on for advertising purposes.</p>"
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "<p>With regard to personal data concerning you, you have the following rights:</p><ul><li>access (Art. 15 GDPR)</li><li>rectification (Art. 16 GDPR)</li><li>erasure (Art. 17 GDPR)</li><li>restriction of processing (Art. 18 GDPR)</li><li>notification of recipients about rectification, erasure or restriction (Art. 19 GDPR)</li><li>data portability (Art. 20 GDPR)</li><li>objection to processing (Art. 21 GDPR)</li></ul><p>Where processing is based on Art. 6(1)(f) GDPR, you may object to it at any time on grounds relating to your particular situation. For any data protection request, simply send an email to <mail>{email}</mail>.</p>"
+      },
+      "complaint": {
+        "title": "Right to lodge a complaint with a supervisory authority",
+        "body": "<p>You have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), in particular in the member state of your habitual residence, your place of work or the place of the alleged infringement. The authority responsible for me is: [name and address of the data protection authority of the federal state].</p>"
+      }
+    },
+    "updated": "Last updated: November 2026"
+  }
+}

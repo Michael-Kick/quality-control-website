@@ -31,9 +31,9 @@ describe("translations", () => {
 
   it.each(namespaces)("namespace %s has no empty strings", (ns) => {
     for (const locale of ["de", "en"]) {
-      const flat = keys(load(locale, ns));
-      for (const key of flat) {
-        const value = key.split(".").reduce((obj: Record<string, unknown>, k) => obj?.[k] as Record<string, unknown>, load(locale, ns));
+      const messages: unknown = load(locale, ns);
+      for (const key of keys(messages)) {
+        const value = key.split(".").reduce<unknown>((obj, k) => (obj as Record<string, unknown> | undefined)?.[k], messages);
         if (typeof value === "string") expect(value.trim(), `${locale}/${ns}: ${key}`).not.toBe("");
       }
     }

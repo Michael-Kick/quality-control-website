@@ -1,1 +1,167 @@
-{}
+{
+  "meta": {
+    "title": "Leistungen: Audits, Schulungen und QM-Beratung",
+    "description": "Interne Audits, Lieferanten- und GMP-Audits, Schulungen und QM-Beratung nach ISO 9001, ISO 13485, ISO 19011 und GMP für Medizintechnik und Pharma. Mit festem Umfang, Dauer und Ergebnis."
+  },
+  "head": {
+    "eyebrow": "Leistungen",
+    "title": "Audits, Schulungen und Beratung nach ISO 9001, ISO 13485, ISO 19011 und GMP",
+    "lead": "Klar beschriebene Leistungen mit festem Umfang, Dauer und Ergebnis.",
+    "jumpNavLabel": "Leistungsbereiche auf dieser Seite"
+  },
+  "specLabels": {
+    "basis": "Grundlage",
+    "duration": "Dauer",
+    "scope": "Umfang",
+    "format": "Format",
+    "deliverable": "Ergebnis",
+    "audience": "Zielgruppe",
+    "completion": "Abschluss"
+  },
+  "audits": {
+    "label": "Audits",
+    "title": "Audits nach der Methodik der ISO 19011",
+    "intro": "Jedes Audit ist geplant, risikobasiert und nachvollziehbar dokumentiert.",
+    "items": {
+      "internal": {
+        "title": "Internes Audit",
+        "text": "Unabhängige Prüfung Ihres QM-Systems, wie von der Norm gefordert.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "1–2 Tage",
+          "format": "Vor Ort oder remote",
+          "deliverable": "Bericht innerhalb von 10 Werktagen"
+        }
+      },
+      "supplier": {
+        "title": "Lieferantenaudit",
+        "text": "Bewertung kritischer Lieferanten und Lohnhersteller in Ihrem Auftrag.",
+        "specs": {
+          "basis": "ISO 13485, GMP",
+          "duration": "1 Tag",
+          "format": "Vor Ort beim Lieferanten",
+          "deliverable": "Bericht mit Lieferantenbewertung"
+        }
+      },
+      "mock": {
+        "title": "Mock-Audit",
+        "text": "Probe-Audit vor Zertifizierung, Rezertifizierung oder Besuch der Benannten Stelle.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "1–3 Tage",
+          "format": "Vor Ort",
+          "deliverable": "Bewertete Feststellungen und Maßnahmenplan"
+        }
+      },
+      "gmp": {
+        "title": "GMP-Audit",
+        "text": "Prüfung von Herstellung, Qualitätskontrolle und Dokumentation im Pharmaumfeld.",
+        "specs": {
+          "basis": "EU-GMP-Leitfaden",
+          "duration": "1–2 Tage",
+          "format": "Vor Ort",
+          "deliverable": "Bericht mit CAPA-Empfehlungen"
+        }
+      }
+    }
+  },
+  "training": {
+    "label": "Schulungen",
+    "title": "Schulungen, angepasst an Ihre Prozesse",
+    "intro": "Als Inhouse-Schulung bei Ihnen vor Ort oder live online.",
+    "items": {
+      "iso13485": {
+        "tag": "ISO 13485",
+        "title": "ISO 13485 Grundlagen",
+        "specs": {
+          "audience": "Mitarbeitende in der Medizintechnik",
+          "duration": "1 Tag",
+          "format": "Inhouse oder online",
+          "completion": "Teilnahmebescheinigung"
+        }
+      },
+      "gmp": {
+        "tag": "GMP",
+        "title": "GMP Basisschulung",
+        "specs": {
+          "audience": "Mitarbeitende in Herstellung und QS",
+          "duration": "½ Tag",
+          "format": "Inhouse oder online",
+          "completion": "Teilnahmebescheinigung"
+        }
+      },
+      "auditor": {
+        "tag": "ISO 19011",
+        "title": "Interne Auditoren nach ISO 19011",
+        "specs": {
+          "audience": "Künftige interne Auditorinnen und Auditoren",
+          "duration": "2 Tage",
+          "format": "Inhouse",
+          "completion": "Zertifikat mit Abschlusstest"
+        }
+      },
+      "iso9001": {
+        "tag": "ISO 9001",
+        "title": "ISO 9001 für Führungskräfte",
+        "specs": {
+          "audience": "Führungskräfte und Prozessverantwortliche",
+          "duration": "½ Tag",
+          "format": "Inhouse oder online",
+          "completion": "Teilnahmebescheinigung"
+        }
+      }
+    }
+  },
+  "consulting": {
+    "label": "Beratung",
+    "title": "Beratung für Ihr QM-System",
+    "intro": "Von der Gap-Analyse bis zur Übernahme der Rolle als Beauftragter der Leitung. Ein System, das ich berate, auditiere ich nicht selbst.",
+    "items": {
+      "managementRep": {
+        "tag": "Interim oder dauerhaft",
+        "title": "Beauftragter der Leitung (extern)",
+        "text": "Übernahme der Rolle nach ISO 13485 Abschnitt 5.5.2 bzw. als QMB im ISO-9001-System. Passend, wenn die Stelle unbesetzt ist oder das Team für eine eigene Stelle zu klein ist.",
+        "specs": {
+          "basis": "ISO 13485 (5.5.2), ISO 9001",
+          "scope": "z. B. 2 Tage pro Monat",
+          "format": "Vor Ort und remote",
+          "deliverable": "Managementbewertung und Berichterstattung an die Leitung"
+        }
+      },
+      "gapAnalysis": {
+        "title": "Gap-Analyse",
+        "text": "Abgleich Ihres QM-Systems mit den Anforderungen der Norm.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485, GMP",
+          "duration": "1–3 Tage",
+          "format": "Vor Ort oder remote",
+          "deliverable": "Gap-Bericht mit priorisiertem Maßnahmenplan"
+        }
+      },
+      "qmsSetup": {
+        "title": "QM-System aufbauen und weiterentwickeln",
+        "text": "Prozesse, Verfahrensanweisungen und Dokumentation, die zu Ihrem Unternehmen passen und im Audit bestehen.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "Projektbasiert",
+          "format": "Vor Ort und remote",
+          "deliverable": "Prozesslandschaft, Verfahrensanweisungen, QM-Handbuch"
+        }
+      },
+      "certification": {
+        "title": "Zertifizierungsbegleitung",
+        "text": "Begleitung von der Planung bis zum Zertifizierungsaudit, einschließlich Bearbeitung der Feststellungen.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "Projektbasiert",
+          "format": "Vor Ort und remote",
+          "deliverable": "Zertifizierungsreifes System, abgeschlossene Feststellungen"
+        }
+      }
+    }
+  },
+  "custom": {
+    "title": "Ihr Anliegen ist nicht dabei?",
+    "text": "Audits, Schulungen und Beratung lassen sich auch individuell zuschneiden: auf weitere Regelwerke, kombinierte Formate oder einzelne Prozesse."
+  }
+}

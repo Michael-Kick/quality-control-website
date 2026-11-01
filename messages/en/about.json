@@ -1,1 +1,96 @@
-{}
+{
+  "meta": {
+    "title": "About: career and qualifications",
+    "description": "Career, certificates and principles: more than 15 years of quality management in medical devices and pharma, with lead auditor qualifications for ISO 13485, ISO 9001 and GMP."
+  },
+  "head": {
+    "eyebrow": "About me",
+    "role": "Quality management · Audits · Training · Consulting",
+    "lead": "Placeholder: a short paragraph on experience and motivation. Why the step into self-employment, and what clients can expect from working together.",
+    "factsLabel": "Profile at a glance",
+    "facts": {
+      "experience": "15+ years in QM",
+      "industries": "Medical devices and pharma",
+      "languages": "German, English"
+    }
+  },
+  "career": {
+    "eyebrow": "Career",
+    "title": "Experience from both sides of the audit",
+    "entries": {
+      "selfEmployed": {
+        "period": "since 2026",
+        "role": "Self-employed: audits and training",
+        "org": "{brand}, {city}"
+      },
+      "headOfQuality": {
+        "period": "2019 – 2025",
+        "role": "Head of Quality Management",
+        "org": "Medical device manufacturer, approx. 250 employees"
+      },
+      "qualityAssurance": {
+        "period": "2014 – 2019",
+        "role": "Quality Assurance, GMP environment",
+        "org": "Pharmaceutical company"
+      },
+      "qualityEngineering": {
+        "period": "2008 – 2014",
+        "role": "Quality engineering",
+        "org": "Supplier to the medical device industry"
+      },
+      "degree": {
+        "period": "2003 – 2008",
+        "role": "Degree in process engineering (Dipl.-Ing.)",
+        "org": "University of Applied Sciences Musterstadt"
+      }
+    }
+  },
+  "certificates": {
+    "eyebrow": "Certificates",
+    "title": "Qualifications with issuing body",
+    "items": {
+      "iso13485": {
+        "standard": "ISO 13485",
+        "name": "Lead Auditor ISO 13485:2016",
+        "issuer": "Issuing body · 20XX"
+      },
+      "iso9001": {
+        "standard": "ISO 9001",
+        "name": "Lead Auditor ISO 9001:2015",
+        "issuer": "Issuing body · 20XX"
+      },
+      "iso19011": {
+        "standard": "ISO 19011",
+        "name": "Auditor qualification per ISO 19011:2018",
+        "issuer": "Issuing body · 20XX"
+      },
+      "gmp": {
+        "standard": "GMP",
+        "name": "Certified GMP Auditor",
+        "issuer": "Issuing body · 20XX"
+      }
+    }
+  },
+  "principles": {
+    "eyebrow": "Principles",
+    "title": "What you can rely on",
+    "items": {
+      "independent": {
+        "title": "Independent",
+        "text": "No conflicts of interest: I never consult on and audit the same system."
+      },
+      "confidential": {
+        "title": "Confidential",
+        "text": "Non-disclosure agreement available before the first conversation."
+      },
+      "insured": {
+        "title": "Insured",
+        "text": "Professional liability insurance for every engagement."
+      }
+    }
+  },
+  "cta": {
+    "title": "Let’s talk",
+    "text": "The intro call of about 30 minutes is free and without obligation."
+  }
+}

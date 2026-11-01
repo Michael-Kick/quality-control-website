@@ -1,1 +1,145 @@
-{}
+{
+  "meta": {
+    "title": "Kontakt: kostenloses Erstgespräch",
+    "description": "Kostenloses, unverbindliches Erstgespräch (ca. 30 Minuten) zu Audits, Schulungen und Beratung nach ISO 9001, ISO 13485, ISO 19011 und GMP anfragen. Antwort innerhalb eines Werktags."
+  },
+  "head": {
+    "eyebrow": "Kontakt",
+    "title": "Kostenloses Erstgespräch vereinbaren",
+    "lead": "Ca. 30 Minuten, kostenlos und unverbindlich. Senden Sie Ihre Anfrage, ich melde mich innerhalb eines Werktags persönlich mit einem Terminvorschlag."
+  },
+  "newTab": "(öffnet in neuem Tab)",
+  "form": {
+    "title": "Ihre Anfrage",
+    "topic": {
+      "legend": "Worum geht es?",
+      "options": {
+        "audit": "Audit",
+        "training": "Schulung",
+        "consulting": "Beratung",
+        "other": "Sonstiges"
+      }
+    },
+    "salutation": {
+      "legend": "Anrede",
+      "options": {
+        "ms": "Frau",
+        "mr": "Herr",
+        "none": "Keine Angabe"
+      }
+    },
+    "name": "Name",
+    "company": "Unternehmen",
+    "email": "Geschäftliche E-Mail",
+    "phone": "Telefon (optional)",
+    "timeframe": {
+      "label": "Gewünschter Zeitraum",
+      "placeholder": "Bitte wählen",
+      "options": {
+        "asap": "So bald wie möglich",
+        "1-3": "In 1–3 Monaten",
+        "3-6": "In 3–6 Monaten",
+        "open": "Noch offen"
+      }
+    },
+    "message": {
+      "label": "Nachricht",
+      "placeholder": "z. B. Lieferantenaudit nach ISO 13485, ein Standort, Raum Stuttgart"
+    },
+    "consent": "Ich habe die <link>Datenschutzerklärung</link> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden.",
+    "requiredHint": "* Pflichtfeld",
+    "submit": "Erstgespräch anfragen",
+    "submitting": "Wird gesendet …",
+    "honeypot": "Dieses Feld bitte leer lassen",
+    "errors": {
+      "required": "Bitte füllen Sie dieses Feld aus.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@firma.de.",
+      "tooLong": "Diese Eingabe ist zu lang.",
+      "invalid": "Bitte wählen Sie eine der angebotenen Optionen.",
+      "consent": "Bitte stimmen Sie der Verarbeitung Ihrer Angaben zu, damit ich Ihre Anfrage bearbeiten kann."
+    },
+    "sendError": {
+      "title": "Ihre Anfrage konnte leider nicht gesendet werden.",
+      "text": "Bitte versuchen Sie es später noch einmal oder melden Sie sich direkt: telefonisch unter <phoneLink>{phone}</phoneLink> oder per E-Mail an <emailLink>{email}</emailLink>."
+    },
+    "success": {
+      "title": "Vielen Dank, Ihre Anfrage ist angekommen.",
+      "text": "Sie erhalten eine Bestätigung per E-Mail und innerhalb eines Werktags einen Terminvorschlag für das Erstgespräch."
+    }
+  },
+  "aside": {
+    "promise": "Jede Anfrage wird innerhalb eines Werktags persönlich beantwortet.",
+    "direct": {
+      "title": "Direkter Kontakt",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "linkedin": "LinkedIn",
+      "location": "Standort",
+      "locationText": "{city}. Audits deutschlandweit und im europäischen Ausland."
+    },
+    "next": {
+      "title": "Wie geht es weiter?",
+      "steps": {
+        "confirmation": "Sie erhalten eine Eingangsbestätigung per E-Mail.",
+        "reply": "Ich melde mich innerhalb eines Werktags persönlich mit einem Terminvorschlag.",
+        "call": "Kostenloses Erstgespräch, ca. 30 Minuten, unverbindlich.",
+        "proposal": "Danach erhalten Sie ein festes Angebot."
+      }
+    }
+  },
+  "email": {
+    "topics": {
+      "audit": "Audit",
+      "training": "Schulung",
+      "consulting": "Beratung",
+      "other": "Sonstiges"
+    },
+    "salutations": {
+      "ms": "Frau",
+      "mr": "Herr",
+      "none": "Keine Angabe"
+    },
+    "timeframes": {
+      "asap": "So bald wie möglich",
+      "1-3": "In 1–3 Monaten",
+      "3-6": "In 3–6 Monaten",
+      "open": "Noch offen"
+    },
+    "languages": {
+      "de": "Deutsch",
+      "en": "Englisch"
+    },
+    "notSpecified": "Keine Angabe",
+    "fields": {
+      "topic": "Anliegen",
+      "salutation": "Anrede",
+      "name": "Name",
+      "company": "Unternehmen",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "timeframe": "Gewünschter Zeitraum",
+      "language": "Sprache",
+      "message": "Nachricht"
+    },
+    "notification": {
+      "subject": "Neue Anfrage: {topic} · {company}",
+      "heading": "Neue Anfrage über das Kontaktformular",
+      "intro": "{name} ({company}) hat über die Website ein kostenloses Erstgespräch angefragt. Mit „Antworten“ schreiben Sie direkt an {email}.",
+      "footer": "Gesendet über das Kontaktformular auf {site}. Die Einwilligung in die Verarbeitung der Angaben wurde erteilt."
+    },
+    "confirmation": {
+      "subject": "Ihre Anfrage bei {brand} ist angekommen",
+      "greeting": {
+        "ms": "Sehr geehrte Frau {name},",
+        "mr": "Sehr geehrter Herr {name},",
+        "none": "Guten Tag {name},"
+      },
+      "thanks": "vielen Dank für Ihre Anfrage, sie ist gut bei mir angekommen.",
+      "next": "Ich melde mich innerhalb eines Werktags persönlich bei Ihnen und schlage Ihnen einen Termin für das kostenlose Erstgespräch vor. Das Gespräch dauert ca. 30 Minuten und ist unverbindlich.",
+      "summary": "Ihre Anfrage im Überblick",
+      "questions": "Falls Sie vorab Fragen haben, antworten Sie einfach auf diese E-Mail oder rufen Sie mich unter {phone} an.",
+      "closing": "Mit freundlichen Grüßen",
+      "footer": "Sie erhalten diese E-Mail, weil über das Kontaktformular auf {site} eine Anfrage mit Ihrer E-Mail-Adresse gesendet wurde. Falls Sie das nicht waren, können Sie diese Nachricht ignorieren."
+    }
+  }
+}

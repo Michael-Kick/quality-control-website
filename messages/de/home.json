@@ -1,1 +1,62 @@
-{}
+{
+  "meta": {
+    "title": "QM-Audits, Schulungen, Beratung: Medizintechnik & Pharma",
+    "description": "Audits, Schulungen und QM-Beratung nach ISO 13485, ISO 9001, ISO 19011 und GMP für KMU aus Medizintechnik und Pharma. Kostenloses Erstgespräch vereinbaren."
+  },
+  "hero": {
+    "eyebrow": "Medizintechnik · Pharma · KMU",
+    "title": "Audits, Schulungen und Beratung für Medizintechnik und Pharma.",
+    "lead": "Nach ISO 9001, ISO 13485, ISO 19011 und GMP. Strukturiert, nachvollziehbar und zugeschnitten auf kleine und mittlere Unternehmen.",
+    "statsLabel": "Auf einen Blick",
+    "stats": {
+      "experience": {
+        "value": "15+",
+        "label": "Jahre im Qualitätsmanagement"
+      },
+      "audits": {
+        "value": "200+",
+        "label": "durchgeführte Audits"
+      },
+      "standards": {
+        "value": "4",
+        "label": "Normen und Regelwerke"
+      },
+      "languages": {
+        "value": "DE/EN",
+        "label": "Audit-Sprachen"
+      }
+    }
+  },
+  "standardsLabel": "Normen und Regelwerke",
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Drei Leistungsbereiche, eine feste Ansprechperson",
+    "items": {
+      "audits": {
+        "title": "Audits",
+        "text": "Interne Audits, Lieferantenaudits und Mock-Audits zur Vorbereitung auf Zertifizierung oder Behördeninspektion.",
+        "link": "Zu den Audits"
+      },
+      "training": {
+        "title": "Schulungen",
+        "text": "Inhouse- und Online-Schulungen zu ISO 13485, ISO 9001, GMP und zur Auditorenqualifizierung nach ISO 19011.",
+        "link": "Zu den Schulungen"
+      },
+      "consulting": {
+        "title": "Beratung",
+        "text": "Aufbau und Weiterentwicklung Ihres QM-Systems, Gap-Analysen und Übernahme der Rolle als Beauftragter der Leitung.",
+        "link": "Zur Beratung"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Über mich",
+    "role": "Audits · Schulungen · Beratung",
+    "text": "Platzhalter: Zwei Sätze zur Person, z. B. über 15 Jahre Qualitätsmanagement in Medizintechnik und Pharma, zuletzt als Leitung QM bei einem Medizinproduktehersteller.",
+    "link": "Werdegang und Zertifikate"
+  },
+  "cta": {
+    "title": "Audit geplant oder Schulungsbedarf?",
+    "text": "Im kostenlosen Erstgespräch klären wir in ca. 30 Minuten, was Sie brauchen."
+  }
+}

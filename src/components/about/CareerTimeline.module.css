@@ -1,0 +1,104 @@
+/*
+ * Desktop: years column | dot and line | entry.
+ * Phones: one column, years above the entry, dot and line on the left edge.
+ * The line runs from each dot down to the next one; the dot is drawn on top.
+ */
+.timeline {
+  --years: 130px;
+  --gap: 24px;
+  --dot: 12px;
+  --line: 2px;
+  --axis: calc(var(--years) + var(--gap));
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--years) minmax(0, 1fr);
+  column-gap: var(--gap);
+  padding-bottom: 24px;
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--axis) - var(--line) / 2);
+  top: 8px;
+  bottom: -8px;
+  width: var(--line);
+  background: var(--rule);
+}
+
+.entry:last-child::before {
+  display: none;
+}
+
+.entry::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--axis) - var(--dot) / 2);
+  top: 6px;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--sky);
+}
+
+.period {
+  padding-top: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sky-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.what {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding-left: var(--gap);
+}
+
+.role {
+  font-size: 16.5px;
+  line-height: 1.4;
+}
+
+.org {
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .timeline {
+    --axis: calc(var(--dot) / 2);
+  }
+
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+    padding-left: calc(var(--dot) + 14px);
+  }
+
+  .entry::after {
+    top: 5px;
+  }
+
+  .period {
+    padding-top: 0;
+  }
+
+  .what {
+    padding-left: 0;
+  }
+}

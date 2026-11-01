@@ -1,0 +1,48 @@
+.split {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 32px 40px;
+  align-items: center;
+}
+
+.body {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 28px);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.role {
+  margin: -6px 0 0;
+  color: var(--sky-ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.text {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--ink-2);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,283 @@
+.wrapper {
+  min-width: 0;
+}
+
+.form {
+  /* Field rows react to the form's own width, not the viewport. */
+  container-type: inline-size;
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding: clamp(18px, 4vw, 28px);
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 16px;
+}
+
+@container (max-width: 520px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label,
+.legend {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.required {
+  color: var(--danger);
+}
+
+/* Text inputs, select and textarea. 16px avoids the zoom-on-focus in iOS Safari. */
+.control {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--field-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  transition: border-color 0.15s;
+}
+
+.control:hover {
+  border-color: var(--ink-3);
+}
+
+.control:focus-visible {
+  border-color: var(--sky-ink);
+}
+
+.control::placeholder {
+  color: var(--ink-3);
+}
+
+.control[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.select {
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%234a5d6f' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Segmented radio groups ("Worum geht es?", "Anrede"). */
+.fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.segment {
+  position: relative;
+  display: inline-flex;
+}
+
+.segment input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.segment span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 9px 15px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--field-border);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.segment:hover span {
+  border-color: var(--ink-3);
+}
+
+.segment input:checked + span {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.segment input:focus-visible + span {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+@media (forced-colors: active) {
+  .segment input:checked + span {
+    forced-color-adjust: none;
+    background: Highlight;
+    border-color: Highlight;
+    color: HighlightText;
+  }
+}
+
+/* Consent checkbox with the privacy policy link. */
+.consent {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.consent input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--navy);
+  cursor: pointer;
+}
+
+.consent input[aria-invalid="true"] {
+  outline: 2px solid var(--danger);
+  outline-offset: 2px;
+}
+
+.consent input[aria-invalid="true"]:focus-visible {
+  outline-color: var(--sky);
+}
+
+.consent label {
+  cursor: pointer;
+}
+
+.consent a {
+  color: var(--sky-ink);
+  font-weight: 600;
+  text-underline-offset: 2px;
+}
+
+.error {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--danger);
+}
+
+.hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.submit {
+  justify-self: start;
+}
+
+@container (max-width: 420px) {
+  .submit {
+    justify-self: stretch;
+  }
+}
+
+/* Off-screen instead of display:none, so simple bots still see and fill it. */
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Send failure with phone and email as alternatives. */
+.alert {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--danger) 6%, var(--white));
+  border: 1px solid var(--danger);
+  border-left-width: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alertTitle {
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.alert a {
+  color: var(--sky-ink);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.success {
+  display: grid;
+  gap: 8px;
+  padding: 24px 26px;
+  color: var(--success-ink);
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  border-radius: var(--radius-lg);
+}
+
+.success p {
+  margin: 0;
+}
+
+.successTitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}

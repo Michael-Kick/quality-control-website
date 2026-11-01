@@ -29,8 +29,10 @@ export async function Footer() {
           </a>
         </div>
       </div>
-      <div className={`container ${styles.legal}`}>
-        © {year} {siteConfig.personName}. {t("rights")}
+      <div className="container">
+        <div className={styles.legal}>
+          © {year} {siteConfig.personName}. {t("rights")}
+        </div>
       </div>
     </footer>
   );

@@ -7,6 +7,9 @@ export const routing = defineRouting({
   // No automatic redirect based on browser language: `/` always goes to German,
   // the visitor switches with the toggle in the header.
   localeDetection: false,
+  // Without detection the NEXT_LOCALE cookie is never read; disabling it keeps
+  // the site cookie-free, as stated in the privacy policy.
+  localeCookie: false,
   pathnames: {
     "/": "/",
     "/leistungen": { de: "/leistungen", en: "/services" },

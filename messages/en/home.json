@@ -1,1 +1,62 @@
-{}
+{
+  "meta": {
+    "title": "QM audits, training, consulting: medical devices & pharma",
+    "description": "Audits, training and QM consulting to ISO 13485, ISO 9001, ISO 19011 and GMP for medical device and pharma SMEs. Book a free intro call."
+  },
+  "hero": {
+    "eyebrow": "Medical devices · Pharma · SMEs",
+    "title": "Audits, training and consulting for medical devices and pharma.",
+    "lead": "To ISO 9001, ISO 13485, ISO 19011 and GMP. Structured, traceable and tailored to small and mid-sized companies.",
+    "statsLabel": "At a glance",
+    "stats": {
+      "experience": {
+        "value": "15+",
+        "label": "years in quality management"
+      },
+      "audits": {
+        "value": "200+",
+        "label": "audits conducted"
+      },
+      "standards": {
+        "value": "4",
+        "label": "standards and frameworks"
+      },
+      "languages": {
+        "value": "DE/EN",
+        "label": "audit languages"
+      }
+    }
+  },
+  "standardsLabel": "Standards and frameworks",
+  "services": {
+    "eyebrow": "Services",
+    "title": "Three service areas, one dedicated contact",
+    "items": {
+      "audits": {
+        "title": "Audits",
+        "text": "Internal audits, supplier audits and mock audits to prepare for certification or regulatory inspection.",
+        "link": "View audits"
+      },
+      "training": {
+        "title": "Training",
+        "text": "In-house and online training on ISO 13485, ISO 9001, GMP and auditor qualification per ISO 19011.",
+        "link": "View training"
+      },
+      "consulting": {
+        "title": "Consulting",
+        "text": "Building and developing your quality system, gap analyses and taking on the role of management representative.",
+        "link": "View consulting"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About me",
+    "role": "Audits · Training · Consulting",
+    "text": "Placeholder: two sentences about the person, e.g. more than 15 years of quality management in medical devices and pharma, most recently as head of quality at a medical device manufacturer.",
+    "link": "Career and certificates"
+  },
+  "cta": {
+    "title": "Planning an audit or need training?",
+    "text": "In a free intro call of about 30 minutes we work out what you need."
+  }
+}

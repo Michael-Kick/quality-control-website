@@ -1,0 +1,82 @@
+.band {
+  background: var(--navy);
+  color: var(--on-navy);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 28px 40px;
+  align-items: end;
+  padding-block: clamp(40px, 6vw, 64px) clamp(36px, 5vw, 56px);
+}
+
+.copy {
+  min-width: 0;
+}
+
+.title {
+  margin: 10px 0 14px;
+  font-size: clamp(28px, 3.8vw, 40px);
+  line-height: 1.13;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.lead {
+  margin: 0;
+  max-width: 58ch;
+  color: var(--on-navy-2);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.stat {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  min-width: 0;
+  padding: 14px 16px;
+  background: var(--navy-2);
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius);
+}
+
+.value {
+  font-size: clamp(22px, 2.4vw, 26px);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Long German compounds ("Qualitätsmanagement") must wrap inside narrow tiles on phones. */
+.label {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--on-navy-3);
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}

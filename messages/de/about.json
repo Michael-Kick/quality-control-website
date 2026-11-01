@@ -1,1 +1,96 @@
-{}
+{
+  "meta": {
+    "title": "Über mich: Werdegang und Qualifikationen",
+    "description": "Werdegang, Zertifikate und Grundsätze: über 15 Jahre Qualitätsmanagement in Medizintechnik und Pharma, Lead-Auditor-Qualifikationen nach ISO 13485 und ISO 9001 sowie GMP."
+  },
+  "head": {
+    "eyebrow": "Über mich",
+    "role": "Qualitätsmanagement · Audits · Schulungen · Beratung",
+    "lead": "Platzhalter: Kurzer Absatz zu Erfahrung und Motivation. Warum der Schritt in die Selbstständigkeit, und was Kunden von der Zusammenarbeit erwarten können.",
+    "factsLabel": "Kurzprofil",
+    "facts": {
+      "experience": "15+ Jahre im QM",
+      "industries": "Medizintechnik und Pharma",
+      "languages": "Deutsch, Englisch"
+    }
+  },
+  "career": {
+    "eyebrow": "Werdegang",
+    "title": "Erfahrung von beiden Seiten des Audits",
+    "entries": {
+      "selfEmployed": {
+        "period": "seit 2026",
+        "role": "Selbstständig: Audits und Schulungen",
+        "org": "{brand}, {city}"
+      },
+      "headOfQuality": {
+        "period": "2019 – 2025",
+        "role": "Leitung Qualitätsmanagement",
+        "org": "Medizinproduktehersteller, ca. 250 Mitarbeitende"
+      },
+      "qualityAssurance": {
+        "period": "2014 – 2019",
+        "role": "Qualitätssicherung im GMP-Umfeld",
+        "org": "Pharmazeutisches Unternehmen"
+      },
+      "qualityEngineering": {
+        "period": "2008 – 2014",
+        "role": "Qualitätsingenieurwesen",
+        "org": "Zulieferer der Medizintechnik"
+      },
+      "degree": {
+        "period": "2003 – 2008",
+        "role": "Studium Verfahrenstechnik (Dipl.-Ing.)",
+        "org": "Hochschule Musterstadt"
+      }
+    }
+  },
+  "certificates": {
+    "eyebrow": "Zertifikate",
+    "title": "Qualifikationen mit ausstellender Stelle",
+    "items": {
+      "iso13485": {
+        "standard": "ISO 13485",
+        "name": "Lead Auditor ISO 13485:2016",
+        "issuer": "Ausstellende Stelle · 20XX"
+      },
+      "iso9001": {
+        "standard": "ISO 9001",
+        "name": "Lead Auditor ISO 9001:2015",
+        "issuer": "Ausstellende Stelle · 20XX"
+      },
+      "iso19011": {
+        "standard": "ISO 19011",
+        "name": "Auditorenqualifizierung nach ISO 19011:2018",
+        "issuer": "Ausstellende Stelle · 20XX"
+      },
+      "gmp": {
+        "standard": "GMP",
+        "name": "Zertifizierte GMP-Auditorin / -Auditor",
+        "issuer": "Ausstellende Stelle · 20XX"
+      }
+    }
+  },
+  "principles": {
+    "eyebrow": "Grundsätze",
+    "title": "Worauf Sie sich verlassen können",
+    "items": {
+      "independent": {
+        "title": "Unabhängig",
+        "text": "Keine Interessenkonflikte: Beratung und Audit desselben Systems schließen sich aus."
+      },
+      "confidential": {
+        "title": "Vertraulich",
+        "text": "Vertraulichkeitsvereinbarung auf Wunsch schon vor dem ersten Gespräch."
+      },
+      "insured": {
+        "title": "Abgesichert",
+        "text": "Berufshaftpflichtversicherung für alle Aufträge."
+      }
+    }
+  },
+  "cta": {
+    "title": "Lassen Sie uns sprechen",
+    "text": "Das Erstgespräch (ca. 30 Minuten) ist kostenlos und unverbindlich."
+  }
+}

@@ -1,0 +1,5 @@
+/* Cards are grid containers; keep the link (and its focus ring) as wide as its text. */
+.link {
+  justify-self: start;
+  margin-top: 2px;
+}

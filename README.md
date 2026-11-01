@@ -14,6 +14,8 @@ cp .env.example .env.local   # Resend-Zugangsdaten eintragen, siehe docs/resend.
 npm run dev                  # http://localhost:3000 -> /de
 ```
 
+Ohne `RESEND_API_KEY` schreibt der Entwicklungsserver die E-Mails des Kontaktformulars nur in die Konsole. So lässt sich das Formular ohne Resend-Konto testen. In Produktion erscheint dann eine Fehlermeldung mit Telefon und E-Mail als Alternative.
+
 | Befehl | Zweck |
 | --- | --- |
 | `npm run dev` | Entwicklungsserver |

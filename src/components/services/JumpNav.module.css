@@ -1,0 +1,29 @@
+.nav {
+  margin-top: 12px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-navy);
+  text-decoration: none;
+  border: 1px solid var(--navy-border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.chip:hover {
+  border-color: var(--sky);
+  color: var(--white);
+}

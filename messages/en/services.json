@@ -1,1 +1,167 @@
-{}
+{
+  "meta": {
+    "title": "Services: audits, training and QMS consulting",
+    "description": "Internal, supplier and GMP audits, training and QMS consulting to ISO 9001, ISO 13485, ISO 19011 and GMP for medical device and pharma companies. With fixed scope, duration and deliverable."
+  },
+  "head": {
+    "eyebrow": "Services",
+    "title": "Audits, training and consulting to ISO 9001, ISO 13485, ISO 19011 and GMP",
+    "lead": "Clearly defined services with fixed scope, duration and deliverable.",
+    "jumpNavLabel": "Service areas on this page"
+  },
+  "specLabels": {
+    "basis": "Basis",
+    "duration": "Duration",
+    "scope": "Scope",
+    "format": "Format",
+    "deliverable": "Deliverable",
+    "audience": "Audience",
+    "completion": "Completion"
+  },
+  "audits": {
+    "label": "Audits",
+    "title": "Audits following the ISO 19011 method",
+    "intro": "Every audit is planned, risk-based and documented so that it can be traced.",
+    "items": {
+      "internal": {
+        "title": "Internal audit",
+        "text": "Independent review of your quality management system, as required by the standard.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "1–2 days",
+          "format": "On site or remote",
+          "deliverable": "Report within 10 working days"
+        }
+      },
+      "supplier": {
+        "title": "Supplier audit",
+        "text": "Evaluation of critical suppliers and contract manufacturers on your behalf.",
+        "specs": {
+          "basis": "ISO 13485, GMP",
+          "duration": "1 day",
+          "format": "On site at the supplier",
+          "deliverable": "Report with supplier rating"
+        }
+      },
+      "mock": {
+        "title": "Mock audit",
+        "text": "Rehearsal audit before certification, recertification or a notified body visit.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "1–3 days",
+          "format": "On site",
+          "deliverable": "Graded findings and action plan"
+        }
+      },
+      "gmp": {
+        "title": "GMP audit",
+        "text": "Audit of manufacturing, quality control and documentation in pharma.",
+        "specs": {
+          "basis": "EU GMP Guidelines",
+          "duration": "1–2 days",
+          "format": "On site",
+          "deliverable": "Report with CAPA recommendations"
+        }
+      }
+    }
+  },
+  "training": {
+    "label": "Training",
+    "title": "Training adapted to your processes",
+    "intro": "As in-house training at your site or live online.",
+    "items": {
+      "iso13485": {
+        "tag": "ISO 13485",
+        "title": "ISO 13485 fundamentals",
+        "specs": {
+          "audience": "Staff at medical device companies",
+          "duration": "1 day",
+          "format": "In-house or online",
+          "completion": "Certificate of attendance"
+        }
+      },
+      "gmp": {
+        "tag": "GMP",
+        "title": "GMP basics",
+        "specs": {
+          "audience": "Production and QA staff",
+          "duration": "½ day",
+          "format": "In-house or online",
+          "completion": "Certificate of attendance"
+        }
+      },
+      "auditor": {
+        "tag": "ISO 19011",
+        "title": "Internal auditor per ISO 19011",
+        "specs": {
+          "audience": "Future internal auditors",
+          "duration": "2 days",
+          "format": "In-house",
+          "completion": "Certificate with final test"
+        }
+      },
+      "iso9001": {
+        "tag": "ISO 9001",
+        "title": "ISO 9001 for managers",
+        "specs": {
+          "audience": "Managers and process owners",
+          "duration": "½ day",
+          "format": "In-house or online",
+          "completion": "Certificate of attendance"
+        }
+      }
+    }
+  },
+  "consulting": {
+    "label": "Consulting",
+    "title": "Consulting for your quality management system",
+    "intro": "From gap analysis to taking on the role of management representative. A system I have consulted on, I do not audit myself.",
+    "items": {
+      "managementRep": {
+        "tag": "Interim or long-term",
+        "title": "External management representative",
+        "text": "Taking on the role per ISO 13485 clause 5.5.2, or as quality manager in an ISO 9001 system. Ideal when the position is vacant or the team is too small for its own role.",
+        "specs": {
+          "basis": "ISO 13485 (5.5.2), ISO 9001",
+          "scope": "e.g. 2 days per month",
+          "format": "On site and remote",
+          "deliverable": "Management review and reporting to top management"
+        }
+      },
+      "gapAnalysis": {
+        "title": "Gap analysis",
+        "text": "Comparison of your quality system with the requirements of the standard.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485, GMP",
+          "duration": "1–3 days",
+          "format": "On site or remote",
+          "deliverable": "Gap report with prioritised action plan"
+        }
+      },
+      "qmsSetup": {
+        "title": "Setting up and developing your QMS",
+        "text": "Processes, procedures and documentation that fit your company and hold up in an audit.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "Project-based",
+          "format": "On site and remote",
+          "deliverable": "Process landscape, procedures, quality manual"
+        }
+      },
+      "certification": {
+        "title": "Certification support",
+        "text": "Support from planning to the certification audit, including handling of findings.",
+        "specs": {
+          "basis": "ISO 9001, ISO 13485",
+          "duration": "Project-based",
+          "format": "On site and remote",
+          "deliverable": "Certification-ready system, closed findings"
+        }
+      }
+    }
+  },
+  "custom": {
+    "title": "Your topic is not listed?",
+    "text": "Audits, training and consulting can also be tailored to your company: further regulations, combined formats or individual processes."
+  }
+}
